@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>법면녹화 & 사면안정 전문</title>
+    <title>씨드마스터 - 법면녹화 & 사면안정 전문</title>
 
     <!-- 오픈그래프 (카카오톡 미리보기) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="법면녹화 & 사면안정 전문">
+    <meta property="og:title" content="씨드마스터 - 법면녹화 & 사면안정 전문">
     <meta property="og:description" content="전국 어디든 신속·정밀 시공! 씨드스프레이, 녹생토, 코아네트, 능형망 전문">
     <meta property="og:image" content="./bgmain.jpg">
 
@@ -88,10 +88,11 @@
             line-height: 1;
         }
 
-        /* --- 히어로 메인 비주얼 (그라데이션 없이 원본 그대로 노출) --- */
+        /* --- 히어로 메인 비주얼 (검은색 40% 투명도 덮개 적용) --- */
         .hero {
             position: relative;
-            background: url('./bgmain.jpg'), url('./bgmain.JPG'), url('./bgmain.png'), 
+            background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), 
+                        url('./bgmain.jpg'), url('./bgmain.JPG'), url('./bgmain.png'), 
                         url('./bg.jpg'), url('./bg.JPG'), url('./배경.jpg'), 
                         url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600');
             background-position: center;
@@ -103,7 +104,6 @@
         }
         .hero-container { max-width: 1200px; margin: 0 auto; }
         
-        /* 뱃지 및 텍스트 밝은 그린 복원 */
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -332,8 +332,8 @@
             <div class="brand-area">
                 <div class="brand-icon"><i class="fa-solid fa-leaf"></i></div>
                 <div class="brand-titles">
-                    <div class="brand-main">법면녹화 <span>전문</span></div>
-                    <div class="brand-sub">GREENERY & SLOPE STABILIZATION</div>
+                    <div class="brand-main">씨드마스터 <span>법면녹화</span></div>
+                    <div class="brand-sub">SEED MASTER GREENERY</div>
                 </div>
             </div>
             <a href="tel:010-2937-2315" class="call-banner-btn">
@@ -343,14 +343,14 @@
         </div>
     </header>
 
-    <!-- 히어로 메인 비주얼 -->
+    <!-- 히어로 메인 비주얼 (40% 오버레이 적용) -->
     <div class="hero">
         <div class="hero-container">
             <div class="hero-badge">
                 <i class="fa-solid fa-shield-halved"></i> 법면녹화 · 사면안정 · 정밀시공 전문
             </div>
             <h1>전국 어디든 신속·정밀 시공!<br><span class="highlight">푸른 환경</span>을 만드는<br>법면녹화 파트너</h1>
-            <p>최첨단 장비와 풍부한 현장 노하우를 바탕으로 토사 사면부터 급경사 암반까지 최적의 녹화 솔루션(씨드스프레이, 녹생토, 코아네트, 능형망)을 제공합니다.</p>
+            <p>씨드마스터는 최첨단 장비와 풍부한 현장 노하우를 바탕으로 토사 사면부터 급경사 암반까지 최적의 녹화 솔루션(씨드스프레이, 녹생토, 코아네트, 능형망)을 제공합니다.</p>
         </div>
     </div>
 
@@ -358,11 +358,11 @@
     <section id="about">
         <div class="section-header">
             <span class="tag">ABOUT US</span>
-            <h2>법면녹화 전문 기업 소개</h2>
+            <h2>씨드마스터 소개</h2>
         </div>
         <div class="about-box">
             <h3>자연과 안전을 생각하는 법면녹화 & 사면안정 전문기업</h3>
-            <p>전국 각지의 도로 절개지, 택지 조성 부지, 산지 사면 등 다양한 난공사 현장에서 축적된 실전 시공 노하우를 바탕으로 최상의 녹화 품질을 선도하고 있습니다.</p>
+            <p><strong>씨드마스터</strong>는 전국 각지의 도로 절개지, 택지 조성 부지, 산지 사면 등 다양한 난공사 현장에서 축적된 실전 시공 노하우를 바탕으로 최상의 녹화 품질을 선도하고 있습니다.</p>
             <p>현장 토질 및 경사도 정밀 분석을 통해 지형에 가장 최적화된 자재와 종자를 정밀 배합하며, 단순 파종을 넘어 토사 유실 방지 및 지속 가능한 자연 생태계 복원까지 고려한 완벽한 사면 안정 솔루션을 제시합니다.</p>
             
             <div class="about-highlights">
@@ -407,7 +407,7 @@
     <section id="competence">
         <div class="section-header">
             <span class="tag">WHY CHOOSE US</span>
-            <h2>핵심 경쟁력</h2>
+            <h2>씨드마스터의 핵심 경쟁력</h2>
         </div>
         <div class="competence-grid">
             <div class="comp-card">
@@ -500,7 +500,7 @@
             </div>
             <div class="zoom-notice"><i class="fa-solid fa-magnifying-glass-plus"></i> 이미지를 터치(클릭)하면 크게 보실 수 있습니다</div>
             <div class="before-after-img-box" id="zoomTrigger">
-                <img id="beforeAfterImg" src="./beforeafter.jpg" alt="시공 전후 비교 사례" data-fallback="./beforeafter.png,./beforeafter.JPG,./photo6.png,./photo6.jpg">
+                <img id="beforeAfterImg" src="./beforeafter.jpg" alt="씨드마스터 시공 전후 비교 사례" data-fallback="./beforeafter.png,./beforeafter.JPG,./photo6.png,./photo6.jpg">
             </div>
         </div>
     </div>
@@ -518,9 +518,9 @@
             <h2>시공사례 확인하기</h2>
         </div>
         <div class="portfolio-blog-container">
-            <p>최신 현장 시공 사례 및 생생한 현장 포토폴리오는<br><strong>공식 네이버 블로그</strong>에서 자세히 확인하실 수 있습니다.</p>
+            <p>씨드마스터의 최신 현장 시공 사례 및 생생한 현장 포토폴리오는<br><strong>공식 네이버 블로그</strong>에서 자세히 확인하실 수 있습니다.</p>
             <a href="https://blog.naver.com/csmin1101" target="_blank" class="go-blog-cta">
-                <i class="fa-solid fa-square-arrow-up-right"></i> 네이버 공식 블로그 바로가기
+                <i class="fa-solid fa-square-arrow-up-right"></i> 씨드마스터 공식 블로그 바로가기
             </a>
         </div>
     </section>
@@ -571,7 +571,7 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-info">
-                <h4>법면녹화 & 사면안정 전문</h4>
+                <h4>씨드마스터 법면녹화</h4>
                 <p><strong>대표 문의:</strong> 010-2937-2315 (최상민 실장)</p>
                 <p><strong>이메일:</strong> sangminia@hanmail.net</p>
                 <p><strong>주요 시공:</strong> 씨드스프레이 / 녹생토(건식·습식) / 코아네트 / 능형망</p>
@@ -583,7 +583,7 @@
                 </a>
             </div>
         </div>
-        <p style="text-align: center; color: var(--text-sub);">Copyright © Greenery Slope. All rights reserved.</p>
+        <p style="text-align: center; color: var(--text-sub);">Copyright © SeedMaster. All rights reserved.</p>
     </footer>
 
     <!-- 자바스크립트 로더 & 모달 -->
