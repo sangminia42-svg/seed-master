@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="smooth-scroll">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>씨드마스터 법면녹화 | 법면녹화 · 사면안정 · 녹생토 전문</title>
+    <title>씨드마스터 | 친환경 법면녹화 · 사면안정 · 정밀시공 전문</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -11,503 +12,334 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            DEFAULT: '#2E7D32',
-                            dark: '#1B5E20',
-                            light: '#4CAF50',
-                            accent: '#81C784',
-                            bg: '#F4F7F4'
+                        forest: {
+                            DEFAULT: '#15803D',
+                            dark: '#0F5128',
+                            darker: '#0A381B',
+                            light: '#16A34A',
+                            accent: '#22C55E'
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif']
                     }
                 }
             }
         }
     </script>
-    <!-- FontAwesome 6.5.1 CDN -->
+
+    <!-- FontAwesome 6 CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts (Noto Sans KR) -->
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
     <style>
         body { font-family: 'Noto Sans KR', sans-serif; }
         .smooth-scroll { scroll-behavior: smooth; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0F5128; }
+        ::-webkit-scrollbar-thumb { background: #22C55E; border-radius: 4px; }
+
+        .green-button-gradient {
+            background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+            transition: all 0.3s ease;
+        }
+        .green-button-gradient:hover {
+            background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+            box-shadow: 0 10px 20px -5px rgba(34, 197, 94, 0.4);
+        }
+
+        .img-zoom {
+            transition: transform 0.3s ease;
+        }
+        .img-zoom:hover {
+            transform: scale(1.02);
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 smooth-scroll">
+<body class="bg-slate-50 text-slate-800 smooth-scroll antialiased selection:bg-forest-accent selection:text-white">
 
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-brand flex items-center justify-center text-white text-2xl font-bold shadow-md shadow-brand/20 group-hover:bg-brand-dark transition-colors">
-                    <i class="fa-solid fa-leaf"></i>
+    <!-- Header / Navigation Bar (Mobile Optimized) -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-md">
+        <!-- Top Mini Info Bar -->
+        <div class="bg-forest-darker text-slate-200 text-[10px] sm:text-xs py-1.5 px-3">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <span class="bg-forest-accent/20 text-forest-accent font-bold px-1.5 py-0.5 rounded border border-forest-accent/30 text-[10px]">
+                        <i class="fa-solid fa-leaf"></i> 법면녹화 전문
+                    </span>
+                    <span class="hidden sm:inline text-slate-300">전국 어디든 신속 · 정밀 시공</span>
                 </div>
-                <div>
-                    <span class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">씨드마스터 <span class="text-brand">법면녹화</span></span>
-                    <span class="block text-xs font-semibold text-slate-400 -mt-1 tracking-wider uppercase">Seed Master Greenery</span>
+                <div class="flex items-center gap-3 font-medium">
+                    <a href="tel:010-2937-2315" class="hover:text-forest-accent transition-colors">
+                        <i class="fa-solid fa-phone mr-1 text-forest-accent"></i>010-2937-2315
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header Bar -->
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1.5">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2 group flex-shrink-0">
+                <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-xl bg-forest text-white flex items-center justify-center text-base sm:text-2xl shadow-md flex-shrink-0">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <div class="min-w-0">
+                    <div class="flex items-center gap-1">
+                        <span class="text-sm sm:text-2xl font-black tracking-tight text-slate-900 whitespace-nowrap">씨드마스터</span>
+                        <span class="hidden sm:inline bg-forest/10 text-forest text-[10px] sm:text-[11px] font-bold px-1.5 py-0.5 rounded whitespace-nowrap">법면녹화</span>
+                    </div>
+                    <span class="hidden md:block text-[10px] font-semibold text-slate-400 tracking-wider uppercase">SEED MASTER GREENERY</span>
                 </div>
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
-                <a href="#about" class="hover:text-brand transition-colors">회사소개</a>
-                <a href="#services" class="hover:text-brand transition-colors">주요공법</a>
-                <a href="#strengths" class="hover:text-brand transition-colors">핵심경쟁력</a>
-                <a href="#blog" class="hover:text-brand transition-colors">시공사례(블로그)</a>
-                <a href="#contact" class="hover:text-brand transition-colors">견적문의</a>
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-bold text-slate-700 whitespace-nowrap">
+                <a href="#methods" class="hover:text-forest transition-colors">핵심공법</a>
+                <a href="#contact" class="hover:text-forest transition-colors">견적문의</a>
             </nav>
 
-            <div class="flex items-center gap-3">
-                <a href="tel:010-2937-2315" class="inline-flex items-center gap-2 bg-brand text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-brand-dark transition-all shadow-md shadow-brand/20">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>010-2937-2315</span>
+            <!-- Direct Phone Call CTA -->
+            <div class="flex items-center flex-shrink-0">
+                <a href="tel:010-2937-2315" class="inline-flex items-center gap-1 green-button-gradient text-white px-2.5 sm:px-5 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl font-bold text-[11px] sm:text-sm shadow-md whitespace-nowrap">
+                    <i class="fa-solid fa-phone-volume text-[10px] sm:text-sm animate-pulse"></i>
+                    <span class="hidden xs:inline">전화상담</span>
+                    <span class="font-black tracking-tight">010-2937-2315</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-slate-900 text-white overflow-hidden py-24 lg:py-32">
-        <!-- Background Image with Overlay (bg.jpg 반영) -->
-        <div class="absolute inset-0 z-0 opacity-40">
-            <img src="./bg.jpg" alt="법면녹화 배경" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80'">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent z-0"></div>
+    <!-- Hero Banner Section -->
+    <section class="relative bg-forest-darker text-white py-16 lg:py-24 overflow-hidden">
+        <!-- Background Image with Dark Overlay -->
+        <div class="absolute inset-0 z-0 opacity-25 bg-cover bg-center" style="background-image: url('bg.jpg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-forest-darker via-forest-darker/90 to-transparent z-0"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 bg-brand/30 border border-brand/50 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-6 text-brand-accent backdrop-blur-sm">
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-emerald-300 mb-6 backdrop-blur-sm">
                     <i class="fa-solid fa-shield-halved"></i> 법면녹화 · 사면안정 · 정밀시공 전문
                 </div>
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6">
+                
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6 text-white">
                     전국 어디든 신속·정밀 시공!<br>
-                    <span class="text-brand-light">푸른 환경</span>을 만드는 <br class="sm:hidden">법면녹화 파트너
+                    <span class="text-emerald-400">푸른 환경을 만드는</span><br>
+                    법면녹화 파트너
                 </h1>
-                <p class="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed">
-                    씨드마스터는 최첨단 장비와 풍부한 현장 노하우를 바탕으로 토사 사면부터 급경사 암반까지 최적의 녹화 솔루션(씨드스프레이, 녹생토, 코아네트, 능형망)을 제공합니다.
+
+                <p class="text-base sm:text-lg text-slate-200 mb-8 leading-relaxed font-normal">
+                    씨드마스터는 최첨단 장비와 풍부한 현장 노하우를 바탕으로 토사 사면부터 급경사 암반까지 최적의 녹화 솔루션(씨스프레이, 녹생토, 코아네트, 능형망)을 제공합니다.
                 </p>
+
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="tel:010-2937-2315" class="inline-flex items-center justify-center gap-3 bg-brand hover:bg-brand-dark text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all text-base">
-                        <i class="fa-solid fa-phone-volume text-xl"></i>
-                        <span>전화 상담 연결 (최상민 실장)</span>
+                    <a href="tel:010-2937-2315" class="inline-flex items-center justify-center gap-2 green-button-gradient text-white font-bold px-8 py-4 rounded-xl shadow-lg text-base">
+                        <i class="fa-solid fa-phone-volume text-lg"></i>
+                        <span>지금 바로 전화상담 (010-2937-2315)</span>
                     </a>
-                    <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold px-8 py-4 rounded-xl transition-all text-base">
-                        <i class="fa-regular fa-paper-plane"></i>
-                        <span>온라인 간편 견적문의</span>
+                    <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-8 py-4 rounded-xl transition-all text-base backdrop-blur-sm">
+                        <i class="fa-regular fa-file-lines text-emerald-400"></i>
+                        <span>온라인 무료 견적문의</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quick Info Cards -->
-    <section class="-mt-10 relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 flex items-center gap-5">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-brand flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                    <i class="fa-solid fa-helmet-safety"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 text-lg">풍부한 현장 노하우</h3>
-                    <p class="text-sm text-slate-500 mt-1">지형과 토질에 맞춘 최적의 맞춤형 공법 제안</p>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 flex items-center gap-5">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-brand flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                    <i class="fa-solid fa-truck-fast"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 text-lg">전국 시공 지원</h3>
-                    <p class="text-sm text-slate-500 mt-1">수도권 및 전국 주요 건설/개발 현장 즉시 출장</p>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 flex items-center gap-5">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-brand flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                    <i class="fa-solid fa-calculator"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 text-lg">합리적인 견적</h3>
-                    <p class="text-sm text-slate-500 mt-1">투명한 공사 단가 산정 및 신속한 견적서 발송</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 sm:py-28">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <div>
-                    <span class="text-brand font-bold text-sm tracking-wider uppercase"><i class="fa-solid fa-seedling mr-2"></i>About Seed Master</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-6 leading-tight">
-                        자연을 살리고 사면을 지키는<br>
-                        <span class="text-brand">씨드마스터 법면녹화</span>입니다.
-                    </h2>
-                    <p class="text-slate-600 leading-relaxed mb-6">
-                        사면 안정과 법면 녹화는 도로 건설, 택지 개발, 산지 개간 등 각종 건설 현장의 안전과 미관을 결정짓는 핵심 공정입니다. 
-                    </p>
-                    <p class="text-slate-600 leading-relaxed mb-8">
-                        씨드마스터는 토사 유실 방지, 암반 사면 고정, 자생적 식생 기반 조성을 위하여 전문화된 특수 장비와 정밀 공법을 적용합니다. 지속 가능한 친환경 공법으로 신뢰성 높은 결과물을 약속드립니다.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6">
-                        <div>
-                            <span class="block text-3xl font-black text-brand">100%</span>
-                            <span class="text-xs font-semibold text-slate-500">책임 시공 및 사후 관리</span>
-                        </div>
-                        <div>
-                            <span class="block text-3xl font-black text-brand">CUSTOM</span>
-                            <span class="text-xs font-semibold text-slate-500">현장 특성별 맞춤 설계</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-brand-dark to-brand p-8 sm:p-10 rounded-3xl text-white shadow-2xl relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                        <i class="fa-solid fa-bullhorn text-brand-accent"></i>
-                        상담 및 무료 현장 문의
-                    </h3>
-                    <ul class="space-y-4 text-slate-100 mb-8 text-sm sm:text-base">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-brand-accent mt-1"></i>
-                            <span>토사 및 절토 사면 녹화 공사 문의</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-brand-accent mt-1"></i>
-                            <span>급경사지/암반 사면 녹생토 시공 설계</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-brand-accent mt-1"></i>
-                            <span>코아네트 및 능형망 낙석 방지 공사</span>
-                        </li>
-                    </ul>
-                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
-                        <div class="text-xs text-brand-accent font-bold uppercase tracking-wider">담당자 직통 연락처</div>
-                        <div class="text-2xl font-black mt-1">최상민 실장 : 010-2937-2315</div>
-                        <div class="text-sm text-slate-200 mt-1"><i class="fa-regular fa-envelope mr-2"></i>sangminia@hanmail.net</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services / Methods Section with Images -->
-    <section id="services" class="py-20 bg-slate-100/80">
+    <!-- Core Methods Section -->
+    <section id="methods" class="py-20 bg-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand font-bold text-sm tracking-wider uppercase"><i class="fa-solid fa-mountain mr-2"></i>Our Expertise</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">씨드마스터 핵심 시공 공법</h2>
-                <p class="text-slate-600">현장 지형, 경사도, 토질 조건에 맞는 최적의 공법을 엄선하여 시공합니다.</p>
+                <span class="text-forest font-bold text-sm uppercase tracking-widest block mb-2">Core Solutions</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900">씨드마스터 핵심공법</h2>
+                <div class="w-16 h-1 bg-forest mx-auto mt-4 rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 1. 씨드스프레이 (photo1.jpg) -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-200/80 flex flex-col justify-between group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="./photo1.jpg" alt="씨드스프레이" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=600&q=80'">
-                        <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full">공법 01</span>
+                <!-- Method 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition-all flex flex-col">
+                    <div class="h-52 bg-slate-200 relative overflow-hidden">
+                        <img src="photo1.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/15803d/ffffff?text=씨스프레이+공법';" alt="씨스프레이 공법" class="w-full h-full object-cover img-zoom">
+                        <span class="absolute top-4 left-4 bg-forest text-white text-xs font-bold px-3 py-1 rounded-full">공법 01</span>
                     </div>
-                    <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-spray-can text-brand"></i>
-                            씨드스프레이 (Seed Spray)
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            종자, 비료, 침식방지제, 물을 혼합하여 고압 분사하는 대표 녹화 공법입니다. 완경사 토사 사면에 빠르게 초상대를 형성합니다.
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 pt-0">
-                        <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
-                            <li><i class="fa-solid fa-check text-brand mr-2"></i>완경사 토사 비탈면 적합</li>
-                            <li><i class="fa-solid fa-check text-brand mr-2"></i>우수한 경제성 및 신속 시공</li>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">씨스프레이 (Seed Spray) 공법</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                종자, 비료, 양질의 토양 개량제 및 침식방지제를 혼합하여 비탈면에 수압 분사하는 친환경 녹화 공법입니다.
+                            </p>
+                        </div>
+                        <ul class="space-y-1.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest"></i> 완경사 토사 사면 최적화</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest"></i> 빠른 초기 발아 및 경관 개선</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 2. 녹생토 건식 (photo2.jpg) -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-200/80 flex flex-col justify-between group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="./photo2.jpg" alt="녹생토 건식" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80'">
-                        <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full">공법 02</span>
+                <!-- Method 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition-all flex flex-col">
+                    <div class="h-52 bg-slate-200 relative overflow-hidden">
+                        <img src="photo2.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f5128/ffffff?text=녹생토+건식+공법';" alt="녹생토 건식 공법" class="w-full h-full object-cover img-zoom">
+                        <span class="absolute top-4 left-4 bg-forest text-white text-xs font-bold px-3 py-1 rounded-full">공법 02</span>
                     </div>
-                    <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-hill-rockslide text-brand"></i>
-                            녹생토 (건식 공법)
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            식생 기반재와 비료, 종자 등을 건식 에어 컴프레서로 사면에 뿜어붙이는 공법으로 암반 및 풍화암 사면에 적합합니다.
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 pt-0">
-                        <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
-                            <li><i class="fa-solid fa-check text-brand mr-2"></i>급경사지 및 리핑암/풍화암 사면</li>
-                            <li><i class="fa-solid fa-check text-brand mr-2"></i>두꺼운 객토층 형성으로 자생력 극대화</li>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">녹생토 (녹화토) 건식 공법</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                암반 및 급경사지에 유기질 취부재와 종자를 압축 공기로 취부하여 수목 생육 기반을 조성하는 공법입니다.
+                            </p>
+                        </div>
+                        <ul class="space-y-1.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest"></i> 암반지역 식생 기반 영구 조성</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest"></i> 풍화 방지 및 슬라이딩 예방</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 3. 녹생토 습식 (photo3.jpg) -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-200/80 flex flex-col justify-between group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="./photo3.jpg" alt="녹생토 습식" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80'">
-                        <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full">공법 03</span>
+                <!-- Method 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition-all flex flex-col">
+                    <div class="h-52 bg-slate-200 relative overflow-hidden">
+                        <img src="photo3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/16a34a/ffffff?text=녹생토+습식+공법';" alt="녹생토 습식 공법" class="w-full h-full object-cover img-zoom">
+                        <span class="absolute top-4 left-4 bg-forest text-white text-xs font-bold px-3 py-1 rounded-full">공법 03</span>
                     </div>
-                    <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-droplet text-brand"></i>
-                            녹생토 (습식 공법)
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            유기질 객토 재료를 물과 배합하여 펌프로 분사 살포하는 공법으로, 정밀한 부착력과 균일한 생육 기반을 조성합니다.
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 pt-0">
-                        <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
-                            <li><i class="fa-solid fa-check text-brand mr-2"></i>균일한 밀도 및 부착력 우수</li>
-                            <li><i class="fa-solid fa-check text-brand mr-2"></i>토사 및 암반 경사면 신속 시공</li>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">녹생토 (녹화토) 습식 공법</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                물과 배합된 습식 배합재를 취부하여 접착력을 높이고 균일한 두께의 수목 생육층을 형성합니다.
+                            </p>
+                        </div>
+                        <ul class="space-y-1.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest"></i> 강력한 사면 밀착성 및 비산 방지</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest"></i> 고품질 녹화 생태 복원</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 4. 코아네트 설치 (photo4.jpg) -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-200/80 flex flex-col justify-between group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="./photo4.jpg" alt="코아네트 설치" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'">
-                        <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full">공법 04</span>
+                <!-- Method 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition-all flex flex-col">
+                    <div class="h-52 bg-slate-200 relative overflow-hidden">
+                        <img src="photo4.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/15803d/ffffff?text=코아네트+공법';" alt="코아네트 공법" class="w-full h-full object-cover img-zoom">
+                        <span class="absolute top-4 left-4 bg-forest text-white text-xs font-bold px-3 py-1 rounded-full">공법 04</span>
                     </div>
-                    <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-border-all text-brand"></i>
-                            코아네트 설치
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            천연 코코넛 섬유 코아네트를 법면에 밀착 고정하여 우수에 의한 세굴 및 표토 유실을 방지하고 뿌리 내림을 돕습니다.
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 pt-0">
-                        <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
-                            <li><i class="fa-solid fa-check text-brand mr-2"></i>100% 친환경 천연 섬유 재질</li>
-                            <li><i class="fa-solid fa-check text-brand mr-2"></i>비탈면 붕괴 및 세굴 예방 효과</li>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">코아네트 / 식생매트 공법</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                천연 코코넛 섬유 그물망을 덮어 우수로 인한 토사 유실을 방지하고 식생 부착률을 극대화합니다.
+                            </p>
+                        </div>
+                        <ul class="space-y-1.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest"></i> 100% 분해성 친환경 자재 사용</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest"></i> 표면 유실 방지 및 세굴 예방</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 5. 능형망 설치 (photo5.jpg) -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-200/80 flex flex-col justify-between group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="./photo5.jpg" alt="능형망 설치" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80'">
-                        <span class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full">공법 05</span>
+                <!-- Method 5 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition-all flex flex-col md:col-span-2 lg:col-span-1">
+                    <div class="h-52 bg-slate-200 relative overflow-hidden">
+                        <img src="photo5.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f5128/ffffff?text=능형망+낙석방지망';" alt="능형망 낙석방지망 공법" class="w-full h-full object-cover img-zoom">
+                        <span class="absolute top-4 left-4 bg-forest text-white text-xs font-bold px-3 py-1 rounded-full">공법 05</span>
                     </div>
-                    <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-grip-lines text-brand"></i>
-                            능형망 설치 (낙석방지)
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            고강도 아연도금 능형망을 피복하고 앵커 핀을 타설하여 암반 및 낙석 위험지역 사면을 보강하고 녹생토 기반을 지지합니다.
-                        </p>
-                    </div>
-                    <div class="px-6 pb-6 pt-0">
-                        <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
-                            <li><i class="fa-solid fa-check text-brand mr-2"></i>암절토 사면 낙석 방지 및 보강</li>
-                            <li><i class="fa-solid fa-check text-brand mr-2"></i>녹생토 기주용 철망 완벽 설치</li>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">능형망 · 낙석방지망 시공</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                낙석 우려가 있는 절토 사면에 아연도금 와이어망을 정밀 고정하여 사면 낙석 재해를 철저히 방지합니다.
+                            </p>
+                        </div>
+                        <ul class="space-y-1.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest"></i> 영구적인 고강도 사면 보강</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-forest"></i> 녹생토 공법과 병행 시 효과 배가</li>
                         </ul>
                     </div>
-                </div>
-
-                <!-- Special Consultation Card -->
-                <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 text-white flex flex-col justify-between shadow-xl">
-                    <div>
-                        <div class="text-brand-accent text-xs font-bold uppercase tracking-wider mb-2">CUSTOM SOLUTION</div>
-                        <h3 class="text-2xl font-bold mb-4">복합 공법 및 맞춤 견적</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            현장의 경사도, 암질, 면적에 따라 코아네트+씨드스프레이, 능형망+녹생토 등 최적의 복합 공법을 안내해 드립니다.
-                        </p>
-                    </div>
-                    <a href="tel:010-2937-2315" class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-light text-white font-bold py-4 px-6 rounded-xl transition-all text-sm shadow-md">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>현장 맞춤 상담받기</span>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Strengths Section -->
-    <section id="strengths" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand font-bold text-sm tracking-wider uppercase"><i class="fa-solid fa-award mr-2"></i>Why Choose Us</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">씨드마스터만의 확실한 약속</h2>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:bg-white hover:shadow-lg transition-all">
-                    <div class="w-16 h-16 rounded-full bg-emerald-100 text-brand flex items-center justify-center text-2xl mx-auto mb-5">
-                        <i class="fa-solid fa-microscope"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2">정밀 토질 분석</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">사면 상태 및 암질 특성을 파악하여 최적의 발아율 확보</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:bg-white hover:shadow-lg transition-all">
-                    <div class="w-16 h-16 rounded-full bg-emerald-100 text-brand flex items-center justify-center text-2xl mx-auto mb-5">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2">전문 장비 보유</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">고압 씨드 분사기, 녹생토 배합기 등 최신 장비 현장 투입</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:bg-white hover:shadow-lg transition-all">
-                    <div class="w-16 h-16 rounded-full bg-emerald-100 text-brand flex items-center justify-center text-2xl mx-auto mb-5">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2">신속한 공기 준수</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">체계적인 시공 프로세스로 공기 단축 및 정밀 시공 완료</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:bg-white hover:shadow-lg transition-all">
-                    <div class="w-16 h-16 rounded-full bg-emerald-100 text-brand flex items-center justify-center text-2xl mx-auto mb-5">
-                        <i class="fa-solid fa-handshake"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2">합리적 표준 단가</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">거품 없는 견적과 투명한 자재 투입으로 만족도 극대화</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section Link -->
-    <section id="blog" class="py-20 bg-emerald-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-brand-accent text-xs font-bold mb-4 border border-white/10">
-                <i class="fa-solid fa-blog"></i> NAVER BLOG
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">생생한 현장 시공사례를 확인하세요</h2>
-            <p class="text-slate-200 max-w-2xl mx-auto text-sm sm:text-base mb-8 leading-relaxed">
-                '씨드마스터 법면녹화' 공식 네이버 블로그에서 다양한 현장의 시공 과정과 비포&애프터 사례를 직접 확인하실 수 있습니다.
-            </p>
-            <a href="https://blog.naver.com/csmin1101" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-black px-8 py-4 rounded-xl shadow-xl transition-all text-base">
-                <span>공식 블로그 바로가기</span>
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- Contact & Estimate Form Section -->
-    <section id="contact" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <!-- Info Column -->
-                <div class="lg:col-span-5">
-                    <span class="text-brand font-bold text-sm tracking-wider uppercase"><i class="fa-solid fa-headset mr-2"></i>Contact Us</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-6">견적 문의 및 현장 상담</h2>
-                    <p class="text-slate-600 mb-8 leading-relaxed">
-                        시공 면적, 현장 위치, 원하시는 공법을 공유해주시면 신속하게 검토 후 상세 견적을 안내해 드립니다.
+    <!-- Contact & Quote Form Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200">
+                <div class="text-center mb-10">
+                    <span class="text-forest font-bold text-xs uppercase tracking-widest block mb-2">Fast Quote Request</span>
+                    <h2 class="text-3xl font-black text-slate-900">온라인 견적 문의</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-2">
+                        현장 정보를 남겨주시면 씨드마스터 담당자가 친절하게 상담해 드립니다.
                     </p>
-
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-white text-brand flex items-center justify-center text-xl font-bold shadow-sm border border-slate-200/80 flex-shrink-0">
-                                <i class="fa-solid fa-user-tie"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400 font-semibold uppercase">담당자</div>
-                                <div class="text-slate-900 font-bold text-base">최상민 실장</div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-white text-brand flex items-center justify-center text-xl font-bold shadow-sm border border-slate-200/80 flex-shrink-0">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400 font-semibold uppercase">대표 전화</div>
-                                <a href="tel:010-2937-2315" class="text-slate-900 font-bold text-lg hover:text-brand transition-colors">010-2937-2315</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-white text-brand flex items-center justify-center text-xl font-bold shadow-sm border border-slate-200/80 flex-shrink-0">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400 font-semibold uppercase">이메일 문의</div>
-                                <a href="mailto:sangminia@hanmail.net" class="text-slate-900 font-semibold text-base hover:text-brand transition-colors">sangminia@hanmail.net</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-white text-brand flex items-center justify-center text-xl font-bold shadow-sm border border-slate-200/80 flex-shrink-0">
-                                <i class="fa-solid fa-globe"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400 font-semibold uppercase">공식 블로그</div>
-                                <a href="https://blog.naver.com/csmin1101" target="_blank" class="text-brand font-semibold text-base underline">blog.naver.com/csmin1101</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Form Column -->
-                <div class="lg:col-span-7">
-                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-200/80">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6">온라인 간편 견적 신청</h3>
-                        <form onsubmit="alert('문의가 제출되었습니다. 빠른 시일 내에 연락드리겠습니다.'); return false;" class="space-y-5">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">성함 / 업체명 *</label>
-                                    <input type="text" required placeholder="예: 홍길동 / OO건설" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">연락처 *</label>
-                                    <input type="tel" required placeholder="010-0000-0000" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-sm">
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">현장 위치 (지역)</label>
-                                    <input type="text" placeholder="예: 경기도 남양주시..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">문의 주요 공법</label>
-                                    <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-sm bg-white">
-                                        <option>공법 선택 (중복 가능)</option>
-                                        <option>씨드스프레이</option>
-                                        <option>녹생토 (건식)</option>
-                                        <option>녹생토 (습식)</option>
-                                        <option>코아네트 설치</option>
-                                        <option>능형망 설치</option>
-                                        <option>기타 / 전체 상담</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">상세 문의 내용 (예상 면적, 현장 상태 등)</label>
-                                <textarea rows="4" placeholder="예: 약 500㎡ 절토 사면 녹생토 시공 견적 문의합니다." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-sm"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full bg-brand hover:bg-brand-dark text-white font-bold py-4 rounded-xl shadow-lg shadow-brand/20 transition-all text-base">
-                                견적 문의 제출하기
-                            </button>
-                        </form>
+                <form onsubmit="event.preventDefault(); alert('견적 문의가 정상 접수되었습니다.\n확인 후 빠르게 연락드리겠습니다.');" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">성함 / 담당자명 <span class="text-red-500">*</span></label>
+                            <input type="text" required placeholder="예: 홍길동" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-forest focus:outline-none text-sm bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">연락처 <span class="text-red-500">*</span></label>
+                            <input type="tel" required placeholder="예: 010-0000-0000" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-forest focus:outline-none text-sm bg-white">
+                        </div>
                     </div>
-                </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">현장 위치 (지역) <span class="text-red-500">*</span></label>
+                            <input type="text" required placeholder="예: 강원도 춘천시" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-forest focus:outline-none text-sm bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">희망 공법 <span class="text-red-500">*</span></label>
+                            <select required class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-forest focus:outline-none text-sm bg-white">
+                                <option value="">선택해주세요</option>
+                                <option value="seed">씨스프레이 (Seed Spray)</option>
+                                <option value="dry">녹생토 (건식)</option>
+                                <option value="wet">녹생토 (습식)</option>
+                                <option value="mat">코아네트 / 식생매트</option>
+                                <option value="net">능형망 / 낙석방지망</option>
+                                <option value="other">기타 / 전체 상담</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">상세 문의 내용</label>
+                        <textarea rows="4" placeholder="예: 약 500㎡ 비탈면 녹생토 시공 견적 문의합니다." class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-forest focus:outline-none text-sm bg-white"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full green-button-gradient text-white font-bold py-4 rounded-xl shadow-lg text-base transition-all">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> 견적 문의 제출하기
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-                <span class="text-xl font-black text-white">씨드마스터 <span class="text-brand-light">법면녹화</span></span>
-                <p class="text-xs text-slate-500 mt-2">대표자: 최상민 실장 | 문의전화: 010-2937-2315 | 이메일: sangminia@hanmail.net</p>
-                <p class="text-xs text-slate-500 mt-1">주요 서비스: 씨드스프레이, 녹생토(건/습식), 코아네트, 능형망 설치 전문</p>
+    <footer class="bg-forest-darker text-slate-300 py-12 border-t border-forest-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6 pb-8 border-b border-forest-dark">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-forest text-white flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black text-white">씨드마스터</span>
+                        <p class="text-xs text-slate-400">친환경 법면녹화 · 사면안정 · 정밀시공 전문</p>
+                    </div>
+                </div>
+                <a href="tel:010-2937-2315" class="inline-flex items-center gap-2 bg-white/10 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-white/20 transition-colors">
+                    <i class="fa-solid fa-phone text-emerald-400"></i> 010-2937-2315
+                </a>
             </div>
-            <div class="text-xs text-slate-500 text-center md:text-right">
-                <p>&copy; 2026 씨드마스터 법면녹화. All rights reserved.</p>
-                <p class="mt-1"><a href="https://blog.naver.com/csmin1101" target="_blank" class="hover:text-white transition-colors">공식 네이버 블로그 바로가기</a></p>
+            <div class="mt-8 text-center text-xs text-slate-400">
+                <p>&copy; 2026 씨드마스터 (SEED MASTER). All rights reserved.</p>
             </div>
         </div>
     </footer>
