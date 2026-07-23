@@ -29,7 +29,7 @@
         body { color: var(--text-dark); line-height: 1.6; background-color: #fff; word-break: keep-all; }
         a { text-decoration: none; color: inherit; }
 
-        /* --- 1. 상단 헤더 (모바일 1줄 강력 고정) --- */
+        /* --- 1. 상단 헤더 --- */
         header {
             position: sticky;
             top: 0;
@@ -58,7 +58,6 @@
         .brand-main span { color: var(--primary-green); }
         .brand-sub { font-size: 10px; font-weight: 700; color: #8C99A6; letter-spacing: 0.8px; margin-top: 3px; }
         
-        /* 모바일 1줄 고정 전화 연결 버튼 */
         .call-banner-btn {
             background: var(--primary-green);
             color: #fff;
@@ -84,7 +83,7 @@
             line-height: 1;
         }
 
-        /* --- 히어로 메인 비주얼 (배경 사진 다중 탐색 호환 적용) --- */
+        /* --- 히어로 메인 비주얼 --- */
         .hero {
             position: relative;
             background: linear-gradient(rgba(10, 25, 12, 0.78), rgba(10, 25, 12, 0.85)), 
@@ -343,7 +342,7 @@
         </div>
     </section>
 
-    <!-- 5. 주요공법 (자동 탐색 지원) -->
+    <!-- 5. 주요공법 -->
     <section id="services">
         <div class="section-header">
             <span class="tag">OUR SERVICES</span>
@@ -403,7 +402,7 @@
         </div>
     </section>
 
-    <!-- 시공 전, 후 사례 (자동 탐색 지원) -->
+    <!-- 시공 전, 후 사례 (모바일 완벽 방어형 자동 로딩) -->
     <div class="before-after-section">
         <div class="before-after-container">
             <div class="section-header" style="margin-bottom: 20px;">
@@ -411,7 +410,7 @@
                 <h2>시공 전, 후 사례</h2>
             </div>
             <div class="before-after-img-box">
-                <img src="./photo6.png" alt="씨드마스터 시공 전후 비교 사례" data-fallback="./photo6.PNG,./photo6.jpg,./photo6.JPG,./사진6.png">
+                <img src="./photo6.png" alt="씨드마스터 시공 전후 비교 사례" data-fallback="./photo6.PNG,./photo6.jpg,./photo6.JPG,./사진6.png,./사진6.PNG">
             </div>
         </div>
     </div>
@@ -491,7 +490,7 @@
         <p style="text-align: center; color: #666;">Copyright © SeedMaster. All rights reserved.</p>
     </footer>
 
-    <!-- 이미지 스마트 자동 로더 스크립트 -->
+    <!-- 이미지 다중 파일명 스마트 자동 로더 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const images = document.querySelectorAll('img[data-fallback]');
@@ -500,7 +499,7 @@
                 let index = 0;
                 img.onerror = function() {
                     if (index < fallbacks.length) {
-                        this.src = fallbacks[index];
+                        this.src = fallbacks[index].trim();
                         index++;
                     }
                 };
