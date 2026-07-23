@@ -17,31 +17,33 @@
     
     <style>
         :root {
-            --evergreen: #05472A;
-            --sunny-lime: #DFEF87;
-            --bright-green: #4CAF50;
-            --accent-lime: #62B859;
-            --dark-card: #0A3A23;
-            --text-white: #FFFFFF;
-            --text-sub: #C3E2CD;
-            --shadow-sm: 0 4px 12px rgba(0,0,0,0.25);
-            --shadow-md: 0 8px 24px rgba(0,0,0,0.35);
+            /* 메인 대표 컬러 */
+            --evergreen: #05472A;       /* 짙은 에버그린 */
+            --sunny-lime: #DFEF87;      /* 서니 라임 포인트 */
+            --primary-green: #2E7D32;  /* 밝은 딥 그린 */
+            --mint-bg: #E8F5E9;        /* 밝은 톤 연한 민트 배경 */
+            --light-bg: #F8F9FA;       /* 밝은 톤 깔끔한 화이트/그레이 배경 */
+            --white: #FFFFFF;
+            --text-dark: #1A2E1C;     /* 밝은 배경용 짙은 글자 */
+            --text-sub: #556B58;
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.06);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { color: var(--text-white); line-height: 1.6; background-color: var(--evergreen); word-break: keep-all; }
+        body { color: var(--text-dark); line-height: 1.6; background-color: var(--white); word-break: keep-all; }
         a { text-decoration: none; color: inherit; }
 
-        /* --- 1. 상단 헤더 --- */
+        /* --- 1. 상단 헤더 (다크 톤) --- */
         header {
             position: sticky;
             top: 0;
-            background: rgba(5, 71, 42, 0.95);
+            background: rgba(5, 71, 42, 0.98);
             backdrop-filter: blur(8px);
             z-index: 1000;
             border-bottom: 1px solid rgba(223, 239, 135, 0.2);
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
         .header-inner {
             max-width: 1200px;
@@ -60,7 +62,7 @@
         .brand-titles { display: flex; flex-direction: column; }
         .brand-main { font-size: 20px; font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -0.5px; }
         .brand-main span { color: var(--sunny-lime); }
-        .brand-sub { font-size: 10px; font-weight: 700; color: var(--text-sub); letter-spacing: 0.8px; margin-top: 3px; }
+        .brand-sub { font-size: 10px; font-weight: 700; color: #C3E2CD; letter-spacing: 0.8px; margin-top: 3px; }
         
         .call-banner-btn {
             background: var(--sunny-lime);
@@ -72,7 +74,7 @@
             gap: 6px;
             font-weight: 900;
             transition: 0.2s;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             white-space: nowrap !important;
             flex-shrink: 0;
             text-decoration: none;
@@ -88,7 +90,7 @@
             line-height: 1;
         }
 
-        /* --- 히어로 메인 비주얼 (검은색 40% 투명도 덮개 적용) --- */
+        /* --- 히어로 메인 비주얼 (다크 톤 + 40% 검은색 오버레이) --- */
         .hero {
             position: relative;
             background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), 
@@ -98,7 +100,7 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            color: var(--text-white);
+            color: #FFFFFF;
             padding: 60px 20px 70px;
             text-align: left;
         }
@@ -109,7 +111,7 @@
             align-items: center;
             gap: 8px;
             background: rgba(16, 42, 23, 0.85);
-            border: 1px solid var(--accent-lime);
+            border: 1px solid #62B859;
             padding: 8px 18px;
             border-radius: 30px;
             font-size: 14px;
@@ -122,32 +124,40 @@
         .hero-badge i { color: var(--sunny-lime); font-size: 15px; }
 
         .hero h1 { font-size: 34px; font-weight: 900; line-height: 1.35; margin-bottom: 20px; letter-spacing: -0.5px; }
-        .hero h1 .highlight { color: var(--bright-green); }
+        .hero h1 .highlight { color: #4CAF50; }
         .hero p { font-size: 15px; line-height: 1.7; color: #E8F5E9; max-width: 700px; margin-bottom: 30px; font-weight: 400; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
 
-        /* 공통 섹션 스타일 */
-        section { padding: 70px 20px; max-width: 1200px; margin: 0 auto; }
+        /* 공통 섹션 레이아웃 */
+        section { padding: 75px 20px; max-width: 100%; margin: 0 auto; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 45px; }
-        .section-header .tag { color: var(--sunny-lime); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; display: block; margin-bottom: 6px; }
-        .section-header h2 { font-size: 28px; font-weight: 800; color: #FFF; }
+        
+        /* 다크 섹션 헤더 */
+        .dark-sec .section-header .tag { color: var(--sunny-lime); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; display: block; margin-bottom: 6px; }
+        .dark-sec .section-header h2 { font-size: 28px; font-weight: 800; color: #FFF; }
+        
+        /* 라이트 섹션 헤더 */
+        .light-sec .section-header .tag { color: var(--evergreen); font-size: 13px; font-weight: 800; letter-spacing: 1.5px; display: block; margin-bottom: 6px; }
+        .light-sec .section-header h2 { font-size: 28px; font-weight: 800; color: var(--evergreen); }
 
-        /* --- 2. 회사소개 --- */
+        /* --- 2. 회사소개 (라이트 톤 화이트 배경) --- */
+        .sec-about { background-color: var(--white); color: var(--text-dark); }
         .about-box {
-            background: var(--dark-card); border-radius: 20px; padding: 40px;
-            border: 1px solid rgba(223, 239, 135, 0.2);
-            border-left: 6px solid var(--sunny-lime); box-shadow: var(--shadow-sm);
+            background: var(--light-bg); border-radius: 20px; padding: 40px;
+            border: 1px solid #EAEAEA;
+            border-left: 6px solid var(--evergreen); box-shadow: var(--shadow-sm);
         }
-        .about-box h3 { font-size: 22px; color: var(--sunny-lime); font-weight: 800; margin-bottom: 15px; }
-        .about-box p { font-size: 15px; color: var(--text-white); line-height: 1.8; margin-bottom: 14px; }
+        .about-box h3 { font-size: 22px; color: var(--evergreen); font-weight: 800; margin-bottom: 15px; }
+        .about-box p { font-size: 15px; color: #333; line-height: 1.8; margin-bottom: 14px; }
         .about-highlights {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px; margin-top: 25px; padding-top: 20px; border-top: 1px dashed rgba(223, 239, 135, 0.3);
+            gap: 15px; margin-top: 25px; padding-top: 20px; border-top: 1px dashed #DDD;
         }
-        .about-item { display: flex; align-items: center; gap: 10px; font-weight: 700; color: #FFF; font-size: 14px; }
-        .about-item i { color: var(--sunny-lime); font-size: 18px; }
+        .about-item { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--evergreen); font-size: 14px; }
+        .about-item i { color: var(--primary-green); font-size: 18px; }
 
-        /* --- 3. 중간 단락 (100%, FAST, A/S) --- */
-        .mid-banner-section { padding: 40px 20px 60px; max-width: 1200px; margin: 0 auto; }
+        /* --- 3. 중간 단락 (다크 에버그린 톤) --- */
+        .sec-mid-banner { background-color: var(--evergreen); padding: 55px 20px; color: #FFF; }
         .mid-badges { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr) !important; 
@@ -155,7 +165,7 @@
             margin-bottom: 35px; 
         }
         .badge-card { 
-            background: var(--dark-card); 
+            background: #0A3A23; 
             border: 1px solid rgba(223, 239, 135, 0.2); 
             border-radius: 16px; 
             padding: 22px 12px; 
@@ -168,7 +178,7 @@
             font-size: 22px; margin: 0 auto 12px; border: 1px solid var(--sunny-lime);
         }
         .badge-title { font-size: 22px; font-weight: 900; color: var(--sunny-lime); margin-bottom: 6px; }
-        .badge-sub { font-size: 13px; font-weight: 600; color: var(--text-white); line-height: 1.4; word-break: keep-all; }
+        .badge-sub { font-size: 13px; font-weight: 600; color: #FFF; line-height: 1.4; word-break: keep-all; }
 
         .mid-quick-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .quick-link-btn {
@@ -180,37 +190,39 @@
         .btn-form-link { background: transparent; color: var(--sunny-lime); border: 2px solid var(--sunny-lime); }
         .btn-form-link:hover { background: rgba(223, 239, 135, 0.15); transform: translateY(-2px); }
 
-        /* --- 4. 핵심 경쟁력 3가지 --- */
+        /* --- 4. 핵심 경쟁력 3가지 (라이트 민트 톤) --- */
+        .sec-competence { background-color: var(--mint-bg); }
         .competence-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .comp-card {
-            background: var(--dark-card); border: 1px solid rgba(223, 239, 135, 0.15); border-radius: 16px;
+            background: var(--white); border: 1px solid #C8E6C9; border-radius: 16px;
             padding: 32px 24px; box-shadow: var(--shadow-sm); transition: 0.3s; position: relative; overflow: hidden;
         }
-        .comp-card:hover { transform: translateY(-5px); border-color: var(--sunny-lime); }
-        .comp-num { font-size: 42px; font-weight: 900; color: rgba(223, 239, 135, 0.15); position: absolute; top: 15px; right: 20px; }
+        .comp-card:hover { transform: translateY(-5px); border-color: var(--evergreen); box-shadow: var(--shadow-md); }
+        .comp-num { font-size: 42px; font-weight: 900; color: rgba(5, 71, 42, 0.12); position: absolute; top: 15px; right: 20px; }
         .comp-icon {
-            width: 50px; height: 50px; background: rgba(223, 239, 135, 0.1); color: var(--sunny-lime);
+            width: 50px; height: 50px; background: var(--mint-bg); color: var(--evergreen);
             border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-size: 22px; margin-bottom: 20px; border: 1px solid rgba(223, 239, 135, 0.3);
+            font-size: 22px; margin-bottom: 20px; border: 1px solid #C8E6C9;
         }
-        .comp-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 10px; color: var(--sunny-lime); }
-        .comp-card p { font-size: 14px; color: var(--text-sub); line-height: 1.6; }
+        .comp-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 10px; color: var(--evergreen); }
+        .comp-card p { font-size: 14px; color: #444; line-height: 1.6; }
 
-        /* --- 5. 주요공법 --- */
+        /* --- 5. 주요공법 (화이트 톤) --- */
+        .sec-services { background-color: var(--white); }
         .service-container { display: flex; flex-direction: column; gap: 24px; }
         .service-row-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .service-row-bottom { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 800px; width: 100%; margin: 0 auto; }
-        .service-card { background: var(--dark-card); border: 1px solid rgba(223, 239, 135, 0.15); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); transition: 0.3s; }
-        .service-card:hover { border-color: var(--sunny-lime); transform: translateY(-4px); }
-        .service-img-box { height: 200px; width: 100%; overflow: hidden; background: #032B1B; border-bottom: 1px solid rgba(223, 239, 135, 0.15); }
+        .service-card { background: var(--white); border: 1px solid #E2E8E3; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); transition: 0.3s; }
+        .service-card:hover { border-color: var(--evergreen); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .service-img-box { height: 200px; width: 100%; overflow: hidden; background: #F0F4F1; border-bottom: 1px solid #EEE; }
         .service-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .service-info { padding: 22px; }
-        .service-info h4 { font-size: 18px; font-weight: 800; color: #FFF; margin-bottom: 8px; }
-        .service-info p { font-size: 14px; color: var(--text-sub); line-height: 1.5; }
+        .service-info h4 { font-size: 18px; font-weight: 800; color: var(--evergreen); margin-bottom: 8px; }
+        .service-info p { font-size: 14px; color: #555; line-height: 1.5; }
 
-        /* --- 시공 전, 후 사례 --- */
-        .before-after-section { padding: 50px 20px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .before-after-container { background: var(--dark-card); border: 1px solid rgba(223, 239, 135, 0.2); border-radius: 20px; padding: 30px; box-shadow: var(--shadow-sm); max-width: 900px; margin: 0 auto; }
+        /* --- 시공 전, 후 사례 (다크 에버그린 톤) --- */
+        .sec-before-after { background-color: var(--evergreen); color: #FFF; padding: 60px 20px; }
+        .before-after-container { background: #0A3A23; border: 1px solid rgba(223, 239, 135, 0.2); border-radius: 20px; padding: 30px; box-shadow: var(--shadow-sm); max-width: 900px; margin: 0 auto; text-align: center; }
         .before-after-img-box { 
             width: 100%; border-radius: 16px; overflow: hidden; margin-top: 15px; 
             display: flex; justify-content: center; align-items: center; cursor: pointer;
@@ -234,24 +246,27 @@
             to { transform: scale(1); opacity: 1; }
         }
 
-        /* --- 6. 시공사례 확인하기 --- */
-        .portfolio-blog-container { background: var(--dark-card); border: 2px dashed var(--sunny-lime); border-radius: 20px; padding: 45px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
-        .portfolio-blog-container p { font-size: 16px; color: var(--text-white); margin-bottom: 25px; font-weight: 500; }
-        .go-blog-cta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--sunny-lime); color: var(--evergreen); padding: 18px 36px; border-radius: 50px; font-size: 18px; font-weight: 900; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: 0.3s; }
-        .go-blog-cta:hover { background: #cBE068; transform: translateY(-3px); }
+        /* --- 6. 시공사례 확인하기 (라이트 민트 톤) --- */
+        .sec-portfolio { background-color: var(--mint-bg); }
+        .portfolio-blog-container { background: var(--white); border: 2px dashed var(--evergreen); border-radius: 20px; padding: 45px 20px; text-align: center; max-width: 800px; margin: 0 auto; box-shadow: var(--shadow-sm); }
+        .portfolio-blog-container p { font-size: 16px; color: #333; margin-bottom: 25px; font-weight: 500; }
+        .go-blog-cta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: #03CF5D; color: #FFFFFF; padding: 18px 36px; border-radius: 50px; font-size: 18px; font-weight: 900; box-shadow: 0 8px 20px rgba(3, 207, 93, 0.3); transition: 0.3s; }
+        .go-blog-cta:hover { background: #02b350; transform: translateY(-3px); }
 
-        /* --- 7. 온라인견적상담 --- */
-        .contact-container { background: var(--dark-card); border: 1px solid rgba(223, 239, 135, 0.2); border-radius: 20px; padding: 40px 30px; box-shadow: var(--shadow-sm); max-width: 800px; margin: 0 auto; }
+        /* --- 7. 온라인견적상담 (화이트 톤) --- */
+        .sec-contact { background-color: var(--white); }
+        .contact-container { background: var(--light-bg); border: 1px solid #E0E0E0; border-radius: 20px; padding: 40px 30px; box-shadow: var(--shadow-sm); max-width: 800px; margin: 0 auto; }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .form-group { margin-bottom: 12px; }
         .form-group.full { grid-column: span 2; }
-        .form-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--sunny-lime); }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border: 1px solid rgba(223, 239, 135, 0.3); border-radius: 10px; font-size: 14px; background: var(--evergreen); color: #FFF; outline: none; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sunny-lime); }
-        .submit-btn { width: 100%; padding: 16px; background: var(--sunny-lime); color: var(--evergreen); border: none; border-radius: 10px; font-size: 16px; font-weight: 900; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        .form-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--evergreen); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border: 1px solid #CCCCCC; border-radius: 10px; font-size: 14px; background: var(--white); color: #222; outline: none; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--evergreen); }
+        .submit-btn { width: 100%; padding: 16px; background: var(--evergreen); color: #FFF; border: none; border-radius: 10px; font-size: 16px; font-weight: 900; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 12px rgba(5, 71, 42, 0.25); transition: 0.2s; }
+        .submit-btn:hover { background: #03301A; }
 
-        /* --- 8. 푸터 --- */
-        footer { background: #032319; color: var(--text-sub); padding: 50px 20px 30px; font-size: 13px; border-top: 1px solid rgba(223, 239, 135, 0.1); }
+        /* --- 8. 푸터 (다크 톤) --- */
+        footer { background: #032319; color: #A0B3A4; padding: 50px 20px 30px; font-size: 13px; border-top: 1px solid rgba(223, 239, 135, 0.1); }
         .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; border-bottom: 1px solid rgba(223, 239, 135, 0.15); padding-bottom: 30px; margin-bottom: 25px; }
         .footer-info h4 { font-size: 18px; color: #fff; font-weight: 800; margin-bottom: 12px; }
         .footer-info p { margin-bottom: 6px; line-height: 1.6; }
@@ -263,6 +278,7 @@
         }
 
         @media (max-width: 768px) {
+            section { padding: 50px 16px; }
             .header-inner { padding: 8px 10px; }
             .brand-main { font-size: 14px; letter-spacing: -0.8px; }
             .brand-sub { font-size: 8px; }
@@ -343,7 +359,7 @@
         </div>
     </header>
 
-    <!-- 히어로 메인 비주얼 (40% 오버레이 적용) -->
+    <!-- 히어로 메인 비주얼 (다크 톤) -->
     <div class="hero">
         <div class="hero-container">
             <div class="hero-badge">
@@ -354,145 +370,153 @@
         </div>
     </div>
 
-    <!-- 2. 회사소개 -->
-    <section id="about">
-        <div class="section-header">
-            <span class="tag">ABOUT US</span>
-            <h2>씨드마스터 소개</h2>
-        </div>
-        <div class="about-box">
-            <h3>자연과 안전을 생각하는 법면녹화 & 사면안정 전문기업</h3>
-            <p><strong>씨드마스터</strong>는 전국 각지의 도로 절개지, 택지 조성 부지, 산지 사면 등 다양한 난공사 현장에서 축적된 실전 시공 노하우를 바탕으로 최상의 녹화 품질을 선도하고 있습니다.</p>
-            <p>현장 토질 및 경사도 정밀 분석을 통해 지형에 가장 최적화된 자재와 종자를 정밀 배합하며, 단순 파종을 넘어 토사 유실 방지 및 지속 가능한 자연 생태계 복원까지 고려한 완벽한 사면 안정 솔루션을 제시합니다.</p>
-            
-            <div class="about-highlights">
-                <div class="about-item"><i class="fa-solid fa-circle-check"></i> 최첨단 전문 시공 장비 보유</div>
-                <div class="about-item"><i class="fa-solid fa-circle-check"></i> 현장 맞춤 토질 분석 & 자재 정밀 배합</div>
-                <div class="about-item"><i class="fa-solid fa-circle-check"></i> 하자 최소화를 위한 철저한 직영 시공</div>
+    <!-- 2. 회사소개 (라이트 톤) -->
+    <section id="about" class="sec-about light-sec">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="tag">ABOUT US</span>
+                <h2>씨드마스터 소개</h2>
+            </div>
+            <div class="about-box">
+                <h3>자연과 안전을 생각하는 법면녹화 & 사면안정 전문기업</h3>
+                <p><strong>씨드마스터</strong>는 전국 각지의 도로 절개지, 택지 조성 부지, 산지 사면 등 다양한 난공사 현장에서 축적된 실전 시공 노하우를 바탕으로 최상의 녹화 품질을 선도하고 있습니다.</p>
+                <p>현장 토질 및 경사도 정밀 분석을 통해 지형에 가장 최적화된 자재와 종자를 정밀 배합하며, 단순 파종을 넘어 토사 유실 방지 및 지속 가능한 자연 생태계 복원까지 고려한 완벽한 사면 안정 솔루션을 제시합니다.</p>
+                
+                <div class="about-highlights">
+                    <div class="about-item"><i class="fa-solid fa-circle-check"></i> 최첨단 전문 시공 장비 보유</div>
+                    <div class="about-item"><i class="fa-solid fa-circle-check"></i> 현장 맞춤 토질 분석 & 자재 정밀 배합</div>
+                    <div class="about-item"><i class="fa-solid fa-circle-check"></i> 하자 최소화를 위한 철저한 직영 시공</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. 중간 단락 -->
-    <div class="mid-banner-section">
-        <div class="mid-badges">
-            <div class="badge-card">
-                <div class="badge-icon"><i class="fa-solid fa-user-shield"></i></div>
-                <div class="badge-title">100%</div>
-                <div class="badge-sub">안전수칙 철저 준수<br>무재해 현장 시공</div>
+    <!-- 3. 중간 단락 (다크 에버그린 톤) -->
+    <div class="sec-mid-banner dark-sec">
+        <div class="section-inner">
+            <div class="mid-badges">
+                <div class="badge-card">
+                    <div class="badge-icon"><i class="fa-solid fa-user-shield"></i></div>
+                    <div class="badge-title">100%</div>
+                    <div class="badge-sub">안전수칙 철저 준수<br>무재해 현장 시공</div>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="badge-title">FAST</div>
+                    <div class="badge-sub">24시간 이내<br>전국 신속 현장 답사</div>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div class="badge-title">A/S</div>
+                    <div class="badge-sub">발아·착생 완료까지<br>끝까지 품질 보증</div>
+                </div>
             </div>
-            <div class="badge-card">
-                <div class="badge-icon"><i class="fa-solid fa-bolt"></i></div>
-                <div class="badge-title">FAST</div>
-                <div class="badge-sub">24시간 이내<br>전국 신속 현장 답사</div>
-            </div>
-            <div class="badge-card">
-                <div class="badge-icon"><i class="fa-solid fa-headset"></i></div>
-                <div class="badge-title">A/S</div>
-                <div class="badge-sub">발아·착생 완료까지<br>끝까지 품질 보증</div>
-            </div>
-        </div>
 
-        <div class="mid-quick-links">
-            <a href="tel:010-2937-2315" class="quick-link-btn btn-call-link">
-                <i class="fa-solid fa-phone-volume"></i> 전화 상담 연결 (최상민 실장)
-            </a>
-            <a href="#contact" class="quick-link-btn btn-form-link">
-                <i class="fa-solid fa-file-pen"></i> 온라인 무료 견적 신청하기
-            </a>
+            <div class="mid-quick-links">
+                <a href="tel:010-2937-2315" class="quick-link-btn btn-call-link">
+                    <i class="fa-solid fa-phone-volume"></i> 전화 상담 연결 (최상민 실장)
+                </a>
+                <a href="#contact" class="quick-link-btn btn-form-link">
+                    <i class="fa-solid fa-file-pen"></i> 온라인 무료 견적 신청하기
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- 4. 핵심 경쟁력 3가지 -->
-    <section id="competence">
-        <div class="section-header">
-            <span class="tag">WHY CHOOSE US</span>
-            <h2>씨드마스터의 핵심 경쟁력</h2>
-        </div>
-        <div class="competence-grid">
-            <div class="comp-card">
-                <span class="comp-num">01</span>
-                <div class="comp-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                <h3>전국 신속 출동 & 기동력</h3>
-                <p>전국 어디든 현장 조사 요청 시 신속하게 방문하여 지형과 토질에 최적화된 맞춤 솔루션을 제시합니다.</p>
+    <!-- 4. 핵심 경쟁력 3가지 (라이트 민트 톤) -->
+    <section id="competence" class="sec-competence light-sec">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="tag">WHY CHOOSE US</span>
+                <h2>씨드마스터의 핵심 경쟁력</h2>
             </div>
-            <div class="comp-card">
-                <span class="comp-num">02</span>
-                <div class="comp-icon"><i class="fa-solid fa-bullseye"></i></div>
-                <h3>정밀 배합 & 하자 최소화</h3>
-                <p>현장 기후와 사면 특성에 맞춘 종자·비료·목재섬유 정밀 배합으로 높인 발아율과 착생률을 보장합니다.</p>
-            </div>
-            <div class="comp-card">
-                <span class="comp-num">03</span>
-                <div class="comp-icon"><i class="fa-solid fa-handshake-angle"></i></div>
-                <h3>합리적 견적 & 책임 시공</h3>
-                <p>중간 유통 거품을 뺀 직영 시공 시스템으로 합리적인 단가를 제공하며 끝까지 책임지고 완공합니다.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. 주요공법 -->
-    <section id="services">
-        <div class="section-header">
-            <span class="tag">OUR SERVICES</span>
-            <h2>주요 시공 공법</h2>
-        </div>
-        <div class="service-container">
-            <div class="service-row-top">
-                <div class="service-card">
-                    <div class="service-img-box">
-                        <img src="./site1.jpg" alt="씨드스프레이 시공" data-fallback="./site1.JPG,./site1.png,./photo1.jpg,./photo1.JPG,./사진1.jpg">
-                    </div>
-                    <div class="service-info">
-                        <h4>씨드스프레이</h4>
-                        <p>평지 및 완경사지에 종자, 비료, 화이버를 고압 분사하여 빠른 녹화를 유도하는 공법</p>
-                    </div>
+            <div class="competence-grid">
+                <div class="comp-card">
+                    <span class="comp-num">01</span>
+                    <div class="comp-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3>전국 신속 출동 & 기동력</h3>
+                    <p>전국 어디든 현장 조사 요청 시 신속하게 방문하여 지형과 토질에 최적화된 맞춤 솔루션을 제시합니다.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-img-box">
-                        <img src="./site2.jpg" alt="건식 녹생토 시공" data-fallback="./site2.JPG,./site2.png,./photo2.jpg,./photo2.JPG,./사진2.jpg">
-                    </div>
-                    <div class="service-info">
-                        <h4>녹생토 (건식)</h4>
-                        <p>암절토 및 풍화암 사면에 식생기재를 건식 분사하여 강한 토양 기반을 형성하는 복원 공법</p>
-                    </div>
+                <div class="comp-card">
+                    <span class="comp-num">02</span>
+                    <div class="comp-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>정밀 배합 & 하자 최소화</h3>
+                    <p>현장 기후와 사면 특성에 맞춘 종자·비료·목재섬유 정밀 배합으로 높인 발아율과 착생률을 보장합니다.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-img-box">
-                        <img src="./photo3.jpg" alt="습식 녹생토 시공" data-fallback="./photo3.JPG,./photo3.png,./사진3.jpg">
-                    </div>
-                    <div class="service-info">
-                        <h4>녹생토 (습식)</h4>
-                        <p>급경사 암반 지역에 부착력을 극대화한 습식 생육 기반재를 녹화하는 고급 공법</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-row-bottom">
-                <div class="service-card">
-                    <div class="service-img-box">
-                        <img src="./photo4.jpg" alt="코아네트 설치" data-fallback="./photo4.JPG,./photo4.png,./사진4.jpg">
-                    </div>
-                    <div class="service-info">
-                        <h4>코아네트 설치</h4>
-                        <p>천연 코코넛 섬유 네트로 법면 토사 유실을 방지하고 식생 기반을 보호하는 시공</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img-box">
-                        <img src="./photo5.jpg" alt="능형망 설치" data-fallback="./photo5.JPG,./photo5.png,./사진5.jpg">
-                    </div>
-                    <div class="service-info">
-                        <h4>능형망 설치</h4>
-                        <p>낙석 위험 사면 및 암반 구간에 능형망을 설치하여 안전 구조를 확보하는 공법</p>
-                    </div>
+                <div class="comp-card">
+                    <span class="comp-num">03</span>
+                    <div class="comp-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3>합리적 견적 & 책임 시공</h3>
+                    <p>중간 유통 거품을 뺀 직영 시공 시스템으로 합리적인 단가를 제공하며 끝까지 책임지고 완공합니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 시공 전, 후 사례 -->
-    <div class="before-after-section">
+    <!-- 5. 주요공법 (화이트 톤) -->
+    <section id="services" class="sec-services light-sec">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="tag">OUR SERVICES</span>
+                <h2>주요 시공 공법</h2>
+            </div>
+            <div class="service-container">
+                <div class="service-row-top">
+                    <div class="service-card">
+                        <div class="service-img-box">
+                            <img src="./site1.jpg" alt="씨드스프레이 시공" data-fallback="./site1.JPG,./site1.png,./photo1.jpg,./photo1.JPG,./사진1.jpg">
+                        </div>
+                        <div class="service-info">
+                            <h4>씨드스프레이</h4>
+                            <p>평지 및 완경사지에 종자, 비료, 화이버를 고압 분사하여 빠른 녹화를 유도하는 공법</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-box">
+                            <img src="./site2.jpg" alt="건식 녹생토 시공" data-fallback="./site2.JPG,./site2.png,./photo2.jpg,./photo2.JPG,./사진2.jpg">
+                        </div>
+                        <div class="service-info">
+                            <h4>녹생토 (건식)</h4>
+                            <p>암절토 및 풍화암 사면에 식생기재를 건식 분사하여 강한 토양 기반을 형성하는 복원 공법</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-box">
+                            <img src="./photo3.jpg" alt="습식 녹생토 시공" data-fallback="./photo3.JPG,./photo3.png,./사진3.jpg">
+                        </div>
+                        <div class="service-info">
+                            <h4>녹생토 (습식)</h4>
+                            <p>급경사 암반 지역에 부착력을 극대화한 습식 생육 기반재를 녹화하는 고급 공법</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-row-bottom">
+                    <div class="service-card">
+                        <div class="service-img-box">
+                            <img src="./photo4.jpg" alt="코아네트 설치" data-fallback="./photo4.JPG,./photo4.png,./사진4.jpg">
+                        </div>
+                        <div class="service-info">
+                            <h4>코아네트 설치</h4>
+                            <p>천연 코코넛 섬유 네트로 법면 토사 유실을 방지하고 식생 기반을 보호하는 시공</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img-box">
+                            <img src="./photo5.jpg" alt="능형망 설치" data-fallback="./photo5.JPG,./photo5.png,./사진5.jpg">
+                        </div>
+                        <div class="service-info">
+                            <h4>능형망 설치</h4>
+                            <p>낙석 위험 사면 및 암반 구간에 능형망을 설치하여 안전 구조를 확보하는 공법</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 시공 전, 후 사례 (다크 에버그린 톤) -->
+    <div class="sec-before-after dark-sec">
         <div class="before-after-container">
             <div class="section-header" style="margin-bottom: 10px;">
                 <span class="tag">BEFORE & AFTER</span>
@@ -511,63 +535,67 @@
         <img class="modal-content" id="modalTargetImg" alt="시공전후 대형 확대 이미지">
     </div>
 
-    <!-- 6. 시공사례 확인하기 -->
-    <section id="portfolio">
-        <div class="section-header">
-            <span class="tag">PORTFOLIO & BLOG</span>
-            <h2>시공사례 확인하기</h2>
-        </div>
-        <div class="portfolio-blog-container">
-            <p>씨드마스터의 최신 현장 시공 사례 및 생생한 현장 포토폴리오는<br><strong>공식 네이버 블로그</strong>에서 자세히 확인하실 수 있습니다.</p>
-            <a href="https://blog.naver.com/csmin1101" target="_blank" class="go-blog-cta">
-                <i class="fa-solid fa-square-arrow-up-right"></i> 씨드마스터 공식 블로그 바로가기
-            </a>
-        </div>
-    </section>
-
-    <!-- 7. 온라인견적상담 -->
-    <section id="contact">
-        <div class="section-header">
-            <span class="tag">ESTIMATE</span>
-            <h2>온라인 견적 상담</h2>
-        </div>
-        <div class="contact-container">
-            <form action="#" method="post">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>성함 / 업체명</label>
-                        <input type="text" placeholder="예: 홍길동 / ○○건설" required>
-                    </div>
-                    <div class="form-group">
-                        <label>연락처</label>
-                        <input type="tel" placeholder="010-0000-0000" required>
-                    </div>
-                    <div class="form-group">
-                        <label>현장 위치 (지역)</label>
-                        <input type="text" placeholder="예: 경기도 남양주시 / 강원도 강릉시" required>
-                    </div>
-                    <div class="form-group">
-                        <label>희망 시공 공법</label>
-                        <select>
-                            <option>씨드스프레이</option>
-                            <option>녹생토 (건식)</option>
-                            <option>녹생토 (습식)</option>
-                            <option>코아네트 설치</option>
-                            <option>능형망 설치</option>
-                            <option>전체 상담 및 현장 답사</option>
-                        </select>
-                    </div>
-                    <div class="form-group full">
-                        <label>문의 및 현장 내용 (예상 면적 ㎡ 등)</label>
-                        <textarea rows="4" placeholder="현장 지형 상태, 면적(㎡), 시공 희망 일정 등을 남겨주시면 신속히 견적을 안내드립니다."></textarea>
-                    </div>
-                </div>
-                <button type="submit" class="submit-btn">온라인 견적 문의 신청하기</button>
-            </form>
+    <!-- 6. 시공사례 확인하기 (라이트 민트 톤) -->
+    <section id="portfolio" class="sec-portfolio light-sec">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="tag">PORTFOLIO & BLOG</span>
+                <h2>시공사례 확인하기</h2>
+            </div>
+            <div class="portfolio-blog-container">
+                <p>씨드마스터의 최신 현장 시공 사례 및 생생한 현장 포토폴리오는<br><strong>공식 네이버 블로그</strong>에서 자세히 확인하실 수 있습니다.</p>
+                <a href="https://blog.naver.com/csmin1101" target="_blank" class="go-blog-cta">
+                    <i class="fa-solid fa-square-arrow-up-right"></i> 씨드마스터 공식 블로그 바로가기
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- 8. 푸터 -->
+    <!-- 7. 온라인견적상담 (화이트 톤) -->
+    <section id="contact" class="sec-contact light-sec">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="tag">ESTIMATE</span>
+                <h2>온라인 견적 상담</h2>
+            </div>
+            <div class="contact-container">
+                <form action="#" method="post">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>성함 / 업체명</label>
+                            <input type="text" placeholder="예: 홍길동 / ○○건설" required>
+                        </div>
+                        <div class="form-group">
+                            <label>연락처</label>
+                            <input type="tel" placeholder="010-0000-0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label>현장 위치 (지역)</label>
+                            <input type="text" placeholder="예: 경기도 남양주시 / 강원도 강릉시" required>
+                        </div>
+                        <div class="form-group">
+                            <label>희망 시공 공법</label>
+                            <select>
+                                <option>씨드스프레이</option>
+                                <option>녹생토 (건식)</option>
+                                <option>녹생토 (습식)</option>
+                                <option>코아네트 설치</option>
+                                <option>능형망 설치</option>
+                                <option>전체 상담 및 현장 답사</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label>문의 및 현장 내용 (예상 면적 ㎡ 등)</label>
+                            <textarea rows="4" placeholder="현장 지형 상태, 면적(㎡), 시공 희망 일정 등을 남겨주시면 신속히 견적을 안내드립니다."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">온라인 견적 문의 신청하기</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 푸터 (다크 톤) -->
     <footer>
         <div class="footer-inner">
             <div class="footer-info">
@@ -583,7 +611,7 @@
                 </a>
             </div>
         </div>
-        <p style="text-align: center; color: var(--text-sub);">Copyright © SeedMaster. All rights reserved.</p>
+        <p style="text-align: center; color: #A0B3A4;">Copyright © SeedMaster. All rights reserved.</p>
     </footer>
 
     <!-- 자바스크립트 로더 & 모달 -->
