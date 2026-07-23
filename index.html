@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>씨드마스터 - 법면녹화 & 사면안정 전문</title>
+    <title>법면녹화 & 사면안정 전문</title>
 
     <!-- 오픈그래프 (카카오톡 미리보기) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="씨드마스터 - 법면녹화 & 사면안정 전문">
+    <meta property="og:title" content="법면녹화 & 사면안정 전문">
     <meta property="og:description" content="전국 어디든 신속·정밀 시공! 씨드스프레이, 녹생토, 코아네트, 능형망 전문">
     <meta property="og:image" content="./bgmain.jpg">
 
@@ -17,32 +17,30 @@
     
     <style>
         :root {
-            --deep-forest: #0D1B0F;
-            --dark-soil: #142416;
-            --card-forest: #1A301E;
-            --primary-green: #2E7D32;
-            --accent-lime: #62B859;
-            --bright-green: #81C784;
-            --text-light: #E0EAE2;
-            --text-gray: #A0B3A4;
-            --white: #FFFFFF;
-            --shadow-sm: 0 4px 12px rgba(0,0,0,0.2);
-            --shadow-md: 0 8px 24px rgba(0,0,0,0.3);
+            /* 🎨 요청하신 이미지 HEX 코드 정밀 적용 */
+            --evergreen: #05472A;       /* Evergreen 메인 배경 & 딥 그린 */
+            --sunny-lime: #DFEF87;      /* Sunny Lime 포인트 & 새싹 컬러 */
+            
+            --dark-card: #0A3A23;       /* 카드 요소용 약간 밝은 에버그린 */
+            --text-white: #FFFFFF;
+            --text-sub: #C3E2CD;
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.25);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.35);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { color: var(--text-light); line-height: 1.6; background-color: var(--deep-forest); word-break: keep-all; }
+        body { color: var(--text-white); line-height: 1.6; background-color: var(--evergreen); word-break: keep-all; }
         a { text-decoration: none; color: inherit; }
 
         /* --- 1. 상단 헤더 --- */
         header {
             position: sticky;
             top: 0;
-            background: rgba(13, 27, 15, 0.95);
+            background: rgba(5, 71, 42, 0.95);
             backdrop-filter: blur(8px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(223, 239, 135, 0.2);
             box-shadow: var(--shadow-sm);
         }
         .header-inner {
@@ -55,30 +53,31 @@
         }
         .brand-area { display: flex; align-items: center; gap: 8px; }
         .brand-icon {
-            width: 42px; height: 44px; background: var(--primary-green);
+            width: 42px; height: 44px; background: var(--sunny-lime);
             border-radius: 12px; display: flex; align-items: center;
-            justify-content: center; color: #fff; font-size: 20px; flex-shrink: 0;
+            justify-content: center; color: var(--evergreen); font-size: 20px; flex-shrink: 0;
         }
         .brand-titles { display: flex; flex-direction: column; }
         .brand-main { font-size: 20px; font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -0.5px; }
-        .brand-main span { color: var(--accent-lime); }
-        .brand-sub { font-size: 10px; font-weight: 700; color: var(--text-gray); letter-spacing: 0.8px; margin-top: 3px; }
+        .brand-main span { color: var(--sunny-lime); }
+        .brand-sub { font-size: 10px; font-weight: 700; color: var(--text-sub); letter-spacing: 0.8px; margin-top: 3px; }
         
         .call-banner-btn {
-            background: var(--primary-green);
-            color: #fff;
+            background: var(--sunny-lime);
+            color: var(--evergreen);
             padding: 10px 16px;
             border-radius: 12px;
             display: inline-flex !important;
             align-items: center;
             gap: 6px;
+            font-weight: 900;
             transition: 0.2s;
-            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             white-space: nowrap !important;
             flex-shrink: 0;
             text-decoration: none;
         }
-        .call-banner-btn:hover { background: #1B5E20; transform: translateY(-1px); }
+        .call-banner-btn:hover { background: #cBE068; transform: translateY(-1px); }
         .call-banner-btn i { font-size: 16px; }
         .call-banner-text {
             display: inline-block !important;
@@ -89,17 +88,17 @@
             line-height: 1;
         }
 
-        /* --- 히어로 메인 비주얼 (기존 메인배경 이미지 유지) --- */
+        /* --- 히어로 메인 비주얼 --- */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(10, 22, 12, 0.82), rgba(10, 22, 12, 0.88)), 
+            background: linear-gradient(rgba(5, 71, 42, 0.82), rgba(5, 71, 42, 0.90)), 
                         url('./bgmain.jpg'), url('./bgmain.JPG'), url('./bgmain.png'), 
                         url('./bg.jpg'), url('./bg.JPG'), url('./배경.jpg'), 
                         url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600');
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            color: var(--white);
+            color: var(--text-white);
             padding: 60px 20px 70px;
             text-align: left;
         }
@@ -109,48 +108,46 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(16, 42, 23, 0.9);
-            border: 1px solid #2D6B37;
+            background: rgba(5, 71, 42, 0.9);
+            border: 1px solid var(--sunny-lime);
             padding: 8px 18px;
             border-radius: 30px;
             font-size: 14px;
             font-weight: 700;
-            color: var(--accent-lime);
+            color: var(--sunny-lime);
             margin-bottom: 22px;
             backdrop-filter: blur(4px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        .hero-badge i { color: var(--accent-lime); font-size: 15px; }
+        .hero-badge i { color: var(--sunny-lime); font-size: 15px; }
 
         .hero h1 { font-size: 34px; font-weight: 900; line-height: 1.35; margin-bottom: 20px; letter-spacing: -0.5px; }
-        .hero h1 .highlight { color: var(--bright-green); }
-        .hero p { font-size: 15px; line-height: 1.7; color: #D1E7DD; max-width: 700px; margin-bottom: 30px; font-weight: 300; }
+        .hero h1 .highlight { color: var(--sunny-lime); }
+        .hero p { font-size: 15px; line-height: 1.7; color: var(--text-sub); max-width: 700px; margin-bottom: 30px; font-weight: 300; }
 
         /* 공통 섹션 스타일 */
         section { padding: 70px 20px; max-width: 1200px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 45px; }
-        .section-header .tag { color: var(--accent-lime); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; display: block; margin-bottom: 6px; }
+        .section-header .tag { color: var(--sunny-lime); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; display: block; margin-bottom: 6px; }
         .section-header h2 { font-size: 28px; font-weight: 800; color: #FFF; }
 
         /* --- 2. 회사소개 --- */
         .about-box {
-            background: var(--dark-soil); border-radius: 20px; padding: 40px;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-left: 6px solid var(--accent-lime); box-shadow: var(--shadow-sm);
+            background: var(--dark-card); border-radius: 20px; padding: 40px;
+            border: 1px solid rgba(223, 239, 135, 0.2);
+            border-left: 6px solid var(--sunny-lime); box-shadow: var(--shadow-sm);
         }
-        .about-box h3 { font-size: 22px; color: var(--bright-green); font-weight: 800; margin-bottom: 15px; }
-        .about-box p { font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 14px; }
+        .about-box h3 { font-size: 22px; color: var(--sunny-lime); font-weight: 800; margin-bottom: 15px; }
+        .about-box p { font-size: 15px; color: var(--text-white); line-height: 1.8; margin-bottom: 14px; }
         .about-highlights {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px; margin-top: 25px; padding-top: 20px; border-top: 1px dashed rgba(255,255,255,0.15);
+            gap: 15px; margin-top: 25px; padding-top: 20px; border-top: 1px dashed rgba(223, 239, 135, 0.3);
         }
         .about-item { display: flex; align-items: center; gap: 10px; font-weight: 700; color: #FFF; font-size: 14px; }
-        .about-item i { color: var(--accent-lime); font-size: 18px; }
+        .about-item i { color: var(--sunny-lime); font-size: 18px; }
 
-        /* --- 3. 중간 단락 (100%, FAST, A/S 모바일/PC 모두 가로 3열 강력 고정) --- */
+        /* --- 3. 중간 단락 (100%, FAST, A/S) --- */
         .mid-banner-section { padding: 40px 20px 60px; max-width: 1200px; margin: 0 auto; }
-        
-        /* 🔥 가로 3열 레이아웃 적용 */
         .mid-badges { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr) !important; 
@@ -158,62 +155,62 @@
             margin-bottom: 35px; 
         }
         .badge-card { 
-            background: var(--card-forest); 
-            border: 1px solid rgba(255,255,255,0.08); 
+            background: var(--dark-card); 
+            border: 1px solid rgba(223, 239, 135, 0.2); 
             border-radius: 16px; 
             padding: 22px 12px; 
             text-align: center; 
             box-shadow: var(--shadow-sm);
         }
         .badge-icon {
-            width: 52px; height: 58px; background: rgba(98, 184, 89, 0.15); color: var(--accent-lime);
+            width: 52px; height: 52px; background: rgba(223, 239, 135, 0.15); color: var(--sunny-lime);
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 22px; margin: 0 auto 12px; border: 1px solid rgba(98, 184, 89, 0.3);
+            font-size: 22px; margin: 0 auto 12px; border: 1px solid var(--sunny-lime);
         }
-        .badge-title { font-size: 22px; font-weight: 900; color: var(--bright-green); margin-bottom: 6px; }
-        .badge-sub { font-size: 13px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: keep-all; }
+        .badge-title { font-size: 22px; font-weight: 900; color: var(--sunny-lime); margin-bottom: 6px; }
+        .badge-sub { font-size: 13px; font-weight: 600; color: var(--text-white); line-height: 1.4; word-break: keep-all; }
 
         .mid-quick-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .quick-link-btn {
             display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px;
             border-radius: 50px; font-size: 16px; font-weight: 800; transition: 0.3s; box-shadow: var(--shadow-sm);
         }
-        .btn-call-link { background: var(--primary-green); color: #fff; }
-        .btn-call-link:hover { background: #1B5E20; transform: translateY(-2px); }
-        .btn-form-link { background: transparent; color: var(--bright-green); border: 2px solid var(--accent-lime); }
-        .btn-form-link:hover { background: rgba(98, 184, 89, 0.15); transform: translateY(-2px); }
+        .btn-call-link { background: var(--sunny-lime); color: var(--evergreen); }
+        .btn-call-link:hover { background: #cBE068; transform: translateY(-2px); }
+        .btn-form-link { background: transparent; color: var(--sunny-lime); border: 2px solid var(--sunny-lime); }
+        .btn-form-link:hover { background: rgba(223, 239, 135, 0.15); transform: translateY(-2px); }
 
-        /* --- 4. 씨드마스터 경쟁력 3가지 --- */
+        /* --- 4. 핵심 경쟁력 3가지 --- */
         .competence-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .comp-card {
-            background: var(--dark-soil); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;
+            background: var(--dark-card); border: 1px solid rgba(223, 239, 135, 0.15); border-radius: 16px;
             padding: 32px 24px; box-shadow: var(--shadow-sm); transition: 0.3s; position: relative; overflow: hidden;
         }
-        .comp-card:hover { transform: translateY(-5px); border-color: var(--accent-lime); }
-        .comp-num { font-size: 42px; font-weight: 900; color: rgba(255, 255, 255, 0.08); position: absolute; top: 15px; right: 20px; }
+        .comp-card:hover { transform: translateY(-5px); border-color: var(--sunny-lime); }
+        .comp-num { font-size: 42px; font-weight: 900; color: rgba(223, 239, 135, 0.15); position: absolute; top: 15px; right: 20px; }
         .comp-icon {
-            width: 50px; height: 50px; background: rgba(255,255,255,0.05); color: var(--accent-lime);
+            width: 50px; height: 50px; background: rgba(223, 239, 135, 0.1); color: var(--sunny-lime);
             border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-size: 22px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);
+            font-size: 22px; margin-bottom: 20px; border: 1px solid rgba(223, 239, 135, 0.3);
         }
-        .comp-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 10px; color: var(--bright-green); }
-        .comp-card p { font-size: 14px; color: var(--text-gray); line-height: 1.6; }
+        .comp-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 10px; color: var(--sunny-lime); }
+        .comp-card p { font-size: 14px; color: var(--text-sub); line-height: 1.6; }
 
-        /* --- 5. 주요공법 (기존 시공 사진 유지) --- */
+        /* --- 5. 주요공법 --- */
         .service-container { display: flex; flex-direction: column; gap: 24px; }
         .service-row-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .service-row-bottom { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 800px; width: 100%; margin: 0 auto; }
-        .service-card { background: var(--dark-soil); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); transition: 0.3s; }
-        .service-card:hover { border-color: var(--accent-lime); transform: translateY(-4px); }
-        .service-img-box { height: 200px; width: 100%; overflow: hidden; background: #0A140B; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .service-card { background: var(--dark-card); border: 1px solid rgba(223, 239, 135, 0.15); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); transition: 0.3s; }
+        .service-card:hover { border-color: var(--sunny-lime); transform: translateY(-4px); }
+        .service-img-box { height: 200px; width: 100%; overflow: hidden; background: #032B1B; border-bottom: 1px solid rgba(223, 239, 135, 0.15); }
         .service-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .service-info { padding: 22px; }
         .service-info h4 { font-size: 18px; font-weight: 800; color: #FFF; margin-bottom: 8px; }
-        .service-info p { font-size: 14px; color: var(--text-gray); line-height: 1.5; }
+        .service-info p { font-size: 14px; color: var(--text-sub); line-height: 1.5; }
 
-        /* --- 시공 전, 후 사례 (기존 사진 유지 + 확대 기능) --- */
+        /* --- 시공 전, 후 사례 --- */
         .before-after-section { padding: 50px 20px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .before-after-container { background: var(--dark-soil); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 30px; box-shadow: var(--shadow-sm); max-width: 900px; margin: 0 auto; }
+        .before-after-container { background: var(--dark-card); border: 1px solid rgba(223, 239, 135, 0.2); border-radius: 20px; padding: 30px; box-shadow: var(--shadow-sm); max-width: 900px; margin: 0 auto; }
         .before-after-img-box { 
             width: 100%; border-radius: 16px; overflow: hidden; margin-top: 15px; 
             display: flex; justify-content: center; align-items: center; cursor: pointer;
@@ -222,9 +219,9 @@
             width: 100%; max-width: 100%; height: auto; display: block; border-radius: 14px; object-fit: contain; transition: transform 0.3s ease;
         }
         .before-after-img-box:hover img { transform: scale(1.02); }
-        .zoom-notice { font-size: 13px; color: var(--accent-lime); font-weight: 700; margin-top: 8px; display: inline-flex; align-items: center; gap: 5px; }
+        .zoom-notice { font-size: 13px; color: var(--sunny-lime); font-weight: 700; margin-top: 8px; display: inline-flex; align-items: center; gap: 5px; }
 
-        /* 이미지 확대 모달 */
+        /* 확대 모달 팝업 */
         .image-modal {
             display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; 
             background-color: rgba(0, 0, 0, 0.92); backdrop-filter: blur(5px); justify-content: center; align-items: center; padding: 20px;
@@ -238,27 +235,27 @@
         }
 
         /* --- 6. 시공사례 확인하기 --- */
-        .portfolio-blog-container { background: var(--dark-soil); border: 2px dashed var(--primary-green); border-radius: 20px; padding: 45px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
-        .portfolio-blog-container p { font-size: 16px; color: var(--text-light); margin-bottom: 25px; font-weight: 500; }
-        .go-blog-cta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: #03CF5D; color: #FFFFFF; padding: 18px 36px; border-radius: 50px; font-size: 18px; font-weight: 900; box-shadow: 0 8px 20px rgba(3, 207, 93, 0.3); transition: 0.3s; }
-        .go-blog-cta:hover { background: #02b350; transform: translateY(-3px); }
+        .portfolio-blog-container { background: var(--dark-card); border: 2px dashed var(--sunny-lime); border-radius: 20px; padding: 45px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .portfolio-blog-container p { font-size: 16px; color: var(--text-white); margin-bottom: 25px; font-weight: 500; }
+        .go-blog-cta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--sunny-lime); color: var(--evergreen); padding: 18px 36px; border-radius: 50px; font-size: 18px; font-weight: 900; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: 0.3s; }
+        .go-blog-cta:hover { background: #cBE068; transform: translateY(-3px); }
 
         /* --- 7. 온라인견적상담 --- */
-        .contact-container { background: var(--dark-soil); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 40px 30px; box-shadow: var(--shadow-sm); max-width: 800px; margin: 0 auto; }
+        .contact-container { background: var(--dark-card); border: 1px solid rgba(223, 239, 135, 0.2); border-radius: 20px; padding: 40px 30px; box-shadow: var(--shadow-sm); max-width: 800px; margin: 0 auto; }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .form-group { margin-bottom: 12px; }
         .form-group.full { grid-column: span 2; }
-        .form-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--bright-green); }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; font-size: 14px; background: #0D1B0F; color: #FFF; outline: none; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent-lime); }
-        .submit-btn { width: 100%; padding: 16px; background: var(--primary-green); color: #fff; border: none; border-radius: 10px; font-size: 16px; font-weight: 800; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3); }
+        .form-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--sunny-lime); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border: 1px solid rgba(223, 239, 135, 0.3); border-radius: 10px; font-size: 14px; background: var(--evergreen); color: #FFF; outline: none; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sunny-lime); }
+        .submit-btn { width: 100%; padding: 16px; background: var(--sunny-lime); color: var(--evergreen); border: none; border-radius: 10px; font-size: 16px; font-weight: 900; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
 
         /* --- 8. 푸터 --- */
-        footer { background: #08120A; color: var(--text-gray); padding: 50px 20px 30px; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 30px; margin-bottom: 25px; }
+        footer { background: #032319; color: var(--text-sub); padding: 50px 20px 30px; font-size: 13px; border-top: 1px solid rgba(223, 239, 135, 0.1); }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; border-bottom: 1px solid rgba(223, 239, 135, 0.15); padding-bottom: 30px; margin-bottom: 25px; }
         .footer-info h4 { font-size: 18px; color: #fff; font-weight: 800; margin-bottom: 12px; }
         .footer-info p { margin-bottom: 6px; line-height: 1.6; }
-        .blog-btn { display: inline-flex; align-items: center; gap: 8px; background: #03CF5D; color: #fff; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 13px; margin-top: 10px; }
+        .blog-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--sunny-lime); color: var(--evergreen); padding: 10px 18px; border-radius: 8px; font-weight: 800; font-size: 13px; margin-top: 10px; }
 
         /* --- 모바일 반응형 --- */
         @media (max-width: 992px) {
@@ -275,7 +272,6 @@
             .call-banner-text { font-size: 11px !important; font-weight: 800; }
             .call-banner-btn i { font-size: 11px; }
 
-            /* 🔥 [모바일 변경 반영] 100%, FAST, A/S 모바일에서도 가로 3열(1줄) 유지 */
             .mid-badges { 
                 grid-template-columns: repeat(3, 1fr) !important; 
                 gap: 6px !important; 
@@ -296,7 +292,6 @@
             .mid-quick-links { flex-direction: column; width: 100%; }
             .quick-link-btn { width: 100%; justify-content: center; }
             
-            /* 🔄 '씨드마스터 핵심 경쟁력'은 이전대로 세로 1열배치 유지 */
             .competence-grid { 
                 grid-template-columns: 1fr !important; 
                 gap: 16px !important; 
@@ -337,8 +332,8 @@
             <div class="brand-area">
                 <div class="brand-icon"><i class="fa-solid fa-leaf"></i></div>
                 <div class="brand-titles">
-                    <div class="brand-main">씨드마스터 <span>법면녹화</span></div>
-                    <div class="brand-sub">SEED MASTER GREENERY</div>
+                    <div class="brand-main">법면녹화 <span>전문</span></div>
+                    <div class="brand-sub">GREENERY & SLOPE STABILIZATION</div>
                 </div>
             </div>
             <a href="tel:010-2937-2315" class="call-banner-btn">
@@ -355,7 +350,7 @@
                 <i class="fa-solid fa-shield-halved"></i> 법면녹화 · 사면안정 · 정밀시공 전문
             </div>
             <h1>전국 어디든 신속·정밀 시공!<br><span class="highlight">푸른 환경</span>을 만드는<br>법면녹화 파트너</h1>
-            <p>씨드마스터는 최첨단 장비와 풍부한 현장 노하우를 바탕으로 토사 사면부터 급경사 암반까지 최적의 녹화 솔루션(씨드스프레이, 녹생토, 코아네트, 능형망)을 제공합니다.</p>
+            <p>최첨단 장비와 풍부한 현장 노하우를 바탕으로 토사 사면부터 급경사 암반까지 최적의 녹화 솔루션(씨드스프레이, 녹생토, 코아네트, 능형망)을 제공합니다.</p>
         </div>
     </div>
 
@@ -363,11 +358,11 @@
     <section id="about">
         <div class="section-header">
             <span class="tag">ABOUT US</span>
-            <h2>씨드마스터 소개</h2>
+            <h2>법면녹화 전문 기업 소개</h2>
         </div>
         <div class="about-box">
             <h3>자연과 안전을 생각하는 법면녹화 & 사면안정 전문기업</h3>
-            <p><strong>씨드마스터</strong>는 전국 각지의 도로 절개지, 택지 조성 부지, 산지 사면 등 다양한 난공사 현장에서 축적된 실전 시공 노하우를 바탕으로 최상의 녹화 품질을 선도하고 있습니다.</p>
+            <p>전국 각지의 도로 절개지, 택지 조성 부지, 산지 사면 등 다양한 난공사 현장에서 축적된 실전 시공 노하우를 바탕으로 최상의 녹화 품질을 선도하고 있습니다.</p>
             <p>현장 토질 및 경사도 정밀 분석을 통해 지형에 가장 최적화된 자재와 종자를 정밀 배합하며, 단순 파종을 넘어 토사 유실 방지 및 지속 가능한 자연 생태계 복원까지 고려한 완벽한 사면 안정 솔루션을 제시합니다.</p>
             
             <div class="about-highlights">
@@ -378,7 +373,7 @@
         </div>
     </section>
 
-    <!-- 3. 중간 단락 (100%, FAST, A/S 아이콘 가로 3열 고정 및 세부 내용 보완) -->
+    <!-- 3. 중간 단락 (100%, FAST, A/S) -->
     <div class="mid-banner-section">
         <div class="mid-badges">
             <div class="badge-card">
@@ -388,7 +383,7 @@
             </div>
             <div class="badge-card">
                 <div class="badge-icon"><i class="fa-solid fa-bolt"></i></div>
-                <div class="badge-title">FAST</div>
+                . <div class="badge-title">FAST</div>
                 <div class="badge-sub">24시간 이내<br>전국 신속 현장 답사</div>
             </div>
             <div class="badge-card">
@@ -408,11 +403,11 @@
         </div>
     </div>
 
-    <!-- 4. 씨드마스터 경쟁력 3가지 (모바일 세로배치 유지) -->
+    <!-- 4. 핵심 경쟁력 3가지 -->
     <section id="competence">
         <div class="section-header">
-            <span class="tag">WHY SEED MASTER</span>
-            <h2>씨드마스터의 핵심 경쟁력</h2>
+            <span class="tag">WHY CHOOSE US</span>
+            <h2>핵심 경쟁력</h2>
         </div>
         <div class="competence-grid">
             <div class="comp-card">
@@ -436,7 +431,7 @@
         </div>
     </section>
 
-    <!-- 5. 주요공법 (기존 이미지 유지) -->
+    <!-- 5. 주요공법 -->
     <section id="services">
         <div class="section-header">
             <span class="tag">OUR SERVICES</span>
@@ -496,7 +491,7 @@
         </div>
     </section>
 
-    <!-- 시공 전, 후 사례 (클릭 시 고화질 확대 지원) -->
+    <!-- 시공 전, 후 사례 -->
     <div class="before-after-section">
         <div class="before-after-container">
             <div class="section-header" style="margin-bottom: 10px;">
@@ -505,7 +500,7 @@
             </div>
             <div class="zoom-notice"><i class="fa-solid fa-magnifying-glass-plus"></i> 이미지를 터치(클릭)하면 크게 보실 수 있습니다</div>
             <div class="before-after-img-box" id="zoomTrigger">
-                <img id="beforeAfterImg" src="./beforeafter.jpg" alt="씨드마스터 시공 전후 비교 사례" data-fallback="./beforeafter.png,./beforeafter.JPG,./photo6.png,./photo6.jpg">
+                <img id="beforeAfterImg" src="./beforeafter.jpg" alt="시공 전후 비교 사례" data-fallback="./beforeafter.png,./beforeafter.JPG,./photo6.png,./photo6.jpg">
             </div>
         </div>
     </div>
@@ -523,9 +518,9 @@
             <h2>시공사례 확인하기</h2>
         </div>
         <div class="portfolio-blog-container">
-            <p>씨드마스터의 최신 현장 시공 사례 및 생생한 현장 포토폴리오는<br><strong>공식 네이버 블로그</strong>에서 자세히 확인하실 수 있습니다.</p>
+            <p>최신 현장 시공 사례 및 생생한 현장 포토폴리오는<br><strong>공식 네이버 블로그</strong>에서 자세히 확인하실 수 있습니다.</p>
             <a href="https://blog.naver.com/csmin1101" target="_blank" class="go-blog-cta">
-                <i class="fa-solid fa-square-arrow-up-right"></i> 씨드마스터 공식 블로그 바로가기
+                <i class="fa-solid fa-square-arrow-up-right"></i> 네이버 공식 블로그 바로가기
             </a>
         </div>
     </section>
@@ -576,7 +571,7 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-info">
-                <h4>씨드마스터 법면녹화</h4>
+                <h4>법면녹화 & 사면안정 전문</h4>
                 <p><strong>대표 문의:</strong> 010-2937-2315 (최상민 실장)</p>
                 <p><strong>이메일:</strong> sangminia@hanmail.net</p>
                 <p><strong>주요 시공:</strong> 씨드스프레이 / 녹생토(건식·습식) / 코아네트 / 능형망</p>
@@ -588,13 +583,13 @@
                 </a>
             </div>
         </div>
-        <p style="text-align: center; color: #666;">Copyright © SeedMaster. All rights reserved.</p>
+        <p style="text-align: center; color: var(--text-sub);">Copyright © Greenery Slope. All rights reserved.</p>
     </footer>
 
-    <!-- 이미지 다중 경로 로더 및 모달 확대 스크립트 -->
+    <!-- 자바스크립트 로더 & 모달 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 1. 이미지 폴백 로더
+            // 1. 대체 이미지 로더
             const images = document.querySelectorAll('img[data-fallback]');
             images.forEach(img => {
                 const fallbacks = img.getAttribute('data-fallback').split(',');
