@@ -17,11 +17,11 @@
     
     <style>
         :root {
-            /* 🎨 요청하신 이미지 HEX 코드 정밀 적용 */
-            --evergreen: #05472A;       /* Evergreen 메인 배경 & 딥 그린 */
-            --sunny-lime: #DFEF87;      /* Sunny Lime 포인트 & 새싹 컬러 */
-            
-            --dark-card: #0A3A23;       /* 카드 요소용 약간 밝은 에버그린 */
+            --evergreen: #05472A;
+            --sunny-lime: #DFEF87;
+            --bright-green: #4CAF50;
+            --accent-lime: #62B859;
+            --dark-card: #0A3A23;
             --text-white: #FFFFFF;
             --text-sub: #C3E2CD;
             --shadow-sm: 0 4px 12px rgba(0,0,0,0.25);
@@ -88,11 +88,10 @@
             line-height: 1;
         }
 
-        /* --- 히어로 메인 비주얼 --- */
+        /* --- 히어로 메인 비주얼 (그라데이션 없이 원본 그대로 노출) --- */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(5, 71, 42, 0.82), rgba(5, 71, 42, 0.90)), 
-                        url('./bgmain.jpg'), url('./bgmain.JPG'), url('./bgmain.png'), 
+            background: url('./bgmain.jpg'), url('./bgmain.JPG'), url('./bgmain.png'), 
                         url('./bg.jpg'), url('./bg.JPG'), url('./배경.jpg'), 
                         url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600');
             background-position: center;
@@ -104,12 +103,13 @@
         }
         .hero-container { max-width: 1200px; margin: 0 auto; }
         
+        /* 뱃지 및 텍스트 밝은 그린 복원 */
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(5, 71, 42, 0.9);
-            border: 1px solid var(--sunny-lime);
+            background: rgba(16, 42, 23, 0.85);
+            border: 1px solid var(--accent-lime);
             padding: 8px 18px;
             border-radius: 30px;
             font-size: 14px;
@@ -122,8 +122,8 @@
         .hero-badge i { color: var(--sunny-lime); font-size: 15px; }
 
         .hero h1 { font-size: 34px; font-weight: 900; line-height: 1.35; margin-bottom: 20px; letter-spacing: -0.5px; }
-        .hero h1 .highlight { color: var(--sunny-lime); }
-        .hero p { font-size: 15px; line-height: 1.7; color: var(--text-sub); max-width: 700px; margin-bottom: 30px; font-weight: 300; }
+        .hero h1 .highlight { color: var(--bright-green); }
+        .hero p { font-size: 15px; line-height: 1.7; color: #E8F5E9; max-width: 700px; margin-bottom: 30px; font-weight: 400; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
 
         /* 공통 섹션 스타일 */
         section { padding: 70px 20px; max-width: 1200px; margin: 0 auto; }
@@ -373,7 +373,7 @@
         </div>
     </section>
 
-    <!-- 3. 중간 단락 (100%, FAST, A/S) -->
+    <!-- 3. 중간 단락 -->
     <div class="mid-banner-section">
         <div class="mid-badges">
             <div class="badge-card">
@@ -383,7 +383,7 @@
             </div>
             <div class="badge-card">
                 <div class="badge-icon"><i class="fa-solid fa-bolt"></i></div>
-                . <div class="badge-title">FAST</div>
+                <div class="badge-title">FAST</div>
                 <div class="badge-sub">24시간 이내<br>전국 신속 현장 답사</div>
             </div>
             <div class="badge-card">
