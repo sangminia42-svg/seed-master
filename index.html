@@ -99,7 +99,7 @@
         }
         .hero-container { max-width: 1200px; margin: 0 auto; }
         
-        /* 뱃지 스타일 수정: 어두운 녹색 배경 & 연두색 텍스트 & 초록 테두리 */
+        /* 뱃지 스타일: 어두운 녹색 배경 & 연두색 텍스트 & 초록 테두리 */
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -115,10 +115,7 @@
             backdrop-filter: blur(4px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        .hero-badge i {
-            color: #A5D6A7;
-            font-size: 15px;
-        }
+        .hero-badge i { color: #A5D6A7; font-size: 15px; }
 
         .hero h1 { font-size: 32px; font-weight: 900; line-height: 1.35; margin-bottom: 20px; letter-spacing: -0.5px; }
         .hero h1 .highlight { color: #4CAF50; }
@@ -194,11 +191,26 @@
         .service-info h4 { font-size: 18px; font-weight: 800; color: #111; margin-bottom: 8px; }
         .service-info p { font-size: 14px; color: var(--text-gray); line-height: 1.5; }
 
-        /* --- 시공 전, 후 사례 --- */
+        /* --- [수정] 시공 전, 후 사례 (모바일 가로 비율 최적화) --- */
         .before-after-section { padding: 50px 20px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
         .before-after-container { background: #FFFFFF; border: 1px solid #EAEAEA; border-radius: 20px; padding: 30px; box-shadow: var(--shadow-sm); max-width: 900px; margin: 0 auto; }
-        .before-after-img-box { width: 100%; border-radius: 16px; overflow: hidden; margin-top: 15px; }
-        .before-after-img-box img { width: 100%; height: auto; display: block; border-radius: 14px; }
+        .before-after-img-box { 
+            width: 100%; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            margin-top: 15px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .before-after-img-box img { 
+            width: 100%; 
+            max-width: 100%;
+            height: auto; 
+            display: block; 
+            border-radius: 14px; 
+            object-fit: contain; /* 모바일에서 잘리지 않고 가로 전체가 시원하게 보이도록 설정 */
+        }
 
         /* --- 6. 시공사례 확인하기 --- */
         .portfolio-blog-container { background: #F4FBF7; border: 2px dashed var(--light-green); border-radius: 20px; padding: 45px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
@@ -248,7 +260,8 @@
             .hero-badge { font-size: 12px; padding: 6px 14px; }
             .section-header h2 { font-size: 22px; }
             .about-box { padding: 25px; }
-            .before-after-container { padding: 20px 15px; }
+            .before-after-container { padding: 15px 10px; }
+            .before-after-img-box img { width: 100%; height: auto; } /* 모바일 가로 100% 꽉 채움 */
         }
     </style>
 </head>
@@ -369,7 +382,7 @@
             <div class="service-row-top">
                 <div class="service-card">
                     <div class="service-img-box">
-                        <img src="./site1.jpg" alt="씨드스프레이 시공" data-fallback="./site1.JPG,./photo1.jpg,./photo1.JPG,./사진1.jpg">
+                        <img src="./site1.jpg" alt="씨드스프레이 시공" data-fallback="./site1.JPG,./site1.png,./photo1.jpg,./photo1.JPG,./사진1.jpg">
                     </div>
                     <div class="service-info">
                         <h4>씨드스프레이</h4>
@@ -378,7 +391,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-img-box">
-                        <img src="./site2.jpg" alt="건식 녹생토 시공" data-fallback="./site2.JPG,./photo2.jpg,./photo2.JPG,./사진2.jpg">
+                        <img src="./site2.jpg" alt="건식 녹생토 시공" data-fallback="./site2.JPG,./site2.png,./photo2.jpg,./photo2.JPG,./사진2.jpg">
                     </div>
                     <div class="service-info">
                         <h4>녹생토 (건식)</h4>
@@ -387,7 +400,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-img-box">
-                        <img src="./photo3.jpg" alt="습식 녹생토 시공" data-fallback="./photo3.JPG,./사진3.jpg">
+                        <img src="./photo3.jpg" alt="습식 녹생토 시공" data-fallback="./photo3.JPG,./photo3.png,./사진3.jpg">
                     </div>
                     <div class="service-info">
                         <h4>녹생토 (습식)</h4>
@@ -399,7 +412,7 @@
             <div class="service-row-bottom">
                 <div class="service-card">
                     <div class="service-img-box">
-                        <img src="./photo4.jpg" alt="코아네트 설치" data-fallback="./photo4.JPG,./사진4.jpg">
+                        <img src="./photo4.jpg" alt="코아네트 설치" data-fallback="./photo4.JPG,./photo4.png,./사진4.jpg">
                     </div>
                     <div class="service-info">
                         <h4>코아네트 설치</h4>
@@ -408,7 +421,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-img-box">
-                        <img src="./photo5.jpg" alt="능형망 설치" data-fallback="./photo5.JPG,./사진5.jpg">
+                        <img src="./photo5.jpg" alt="능형망 설치" data-fallback="./photo5.JPG,./photo5.png,./사진5.jpg">
                     </div>
                     <div class="service-info">
                         <h4>능형망 설치</h4>
@@ -419,7 +432,7 @@
         </div>
     </section>
 
-    <!-- 시공 전, 후 사례 -->
+    <!-- 시공 전, 후 사례 (모바일 가로 꽉 채움) -->
     <div class="before-after-section">
         <div class="before-after-container">
             <div class="section-header" style="margin-bottom: 20px;">
@@ -427,7 +440,7 @@
                 <h2>시공 전, 후 사례</h2>
             </div>
             <div class="before-after-img-box">
-                <img id="beforeAfterImg" src="./photo6.png" alt="씨드마스터 시공 전후 비교 사례" data-fallback="./photo6.PNG,./photo6.jpg,./photo6.JPG,./사진6.png,./사진6.PNG">
+                <img src="./photo6.png" alt="씨드마스터 시공 전후 비교 사례" data-fallback="./photo6.PNG,./photo6.jpg,./photo6.JPG,./photo6.jpeg,./사진6.png">
             </div>
         </div>
     </div>
@@ -507,7 +520,7 @@
         <p style="text-align: center; color: #666;">Copyright © SeedMaster. All rights reserved.</p>
     </footer>
 
-    <!-- 스마트 자동 로더 스크립트 -->
+    <!-- 이미지 스마트 자동 로더 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const images = document.querySelectorAll('img[data-fallback]');
